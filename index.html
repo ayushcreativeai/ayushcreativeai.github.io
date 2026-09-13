@@ -377,9 +377,17 @@
     entries.forEach(function(en){
       var v = en.target;
       if (en.isIntersecting) {
-        if (v.preload === 'none') v.preload = 'auto';
+        if (v.dataset.armed !== '1') {
+          v.dataset.armed = '1';
+          v.preload = 'auto';
+          v.load();
+          v.addEventListener('canplay', function(){
+            if (v.dataset.want === '1') { var q = v.play(); if (q && q.catch) q.catch(function(){}); }
+          });
+        }
+        v.dataset.want = '1';
         var p = v.play(); if (p && p.catch) p.catch(function(){});
-      } else { v.pause(); }
+      } else { v.dataset.want = '0'; v.pause(); }
     });
   }, {threshold:0.45});
   vids.forEach(function(v){ vo.observe(v); });
