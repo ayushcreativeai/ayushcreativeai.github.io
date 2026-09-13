@@ -368,7 +368,7 @@
       entries.forEach(function(en){
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    }, {rootMargin:'0px 0px -6% 0px', threshold:0});
     els.forEach(function(e, i){ e.style.transitionDelay = ((i % 4) * 55) + 'ms'; io.observe(e); });
   }
 
@@ -389,7 +389,7 @@
         var p = v.play(); if (p && p.catch) p.catch(function(){});
       } else { v.dataset.want = '0'; v.pause(); }
     });
-  }, {threshold:0.45});
+  }, {rootMargin:'-25% 0px -25% 0px', threshold:0});
   vids.forEach(function(v){ vo.observe(v); });
 
   document.querySelectorAll('.snd').forEach(function(btn){
