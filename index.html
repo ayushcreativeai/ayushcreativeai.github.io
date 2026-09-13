@@ -66,7 +66,7 @@
   @media(max-width:720px){.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 
   /* case: sticky split */
-  .case{display:grid;grid-template-columns:minmax(290px,.72fr) 1.28fr;gap:72px;padding-block:104px;border-top:1px solid var(--line)}
+  .case{display:grid;grid-template-columns:minmax(280px,.9fr) 1.1fr;gap:64px;padding-block:96px;border-top:1px solid var(--line)}
   .case:first-of-type{border-top:0}
   .panel{position:sticky;top:110px;align-self:start}
   .panel h2{font-size:clamp(30px,3.6vw,46px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:14px 0 0}
@@ -75,7 +75,7 @@
   .metric .v{font-size:52px;font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
   .metric .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);max-width:12ch;line-height:1.4}
 
-  .reel{display:flex;flex-direction:column;gap:76px}
+  .reel{display:grid;grid-template-columns:repeat(2,minmax(0,306px));gap:34px 30px;justify-content:start}
   .card{position:relative}
   .vidwrap{
     position:relative;overflow:hidden;border-radius:16px;background:var(--paper-2);
@@ -96,13 +96,13 @@
   }
   .snd:hover{background:var(--accent)}
   .snd:active{transform:scale(.96)}
-  .hook{margin:26px 0 0;font-size:clamp(22px,2.35vw,31px);line-height:1.26;letter-spacing:-.028em;max-width:28ch;font-weight:600}
-  .why{margin:14px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6}
+  .hook{margin:18px 0 0;font-size:18.5px;line-height:1.32;letter-spacing:-.02em;font-weight:600}
+  .why{margin:10px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6}
 
   @media(max-width:900px){
-    .case{grid-template-columns:1fr;gap:40px;padding-block:72px}
+    .case{grid-template-columns:1fr;gap:36px;padding-block:68px}
     .panel{position:static}
-    .reel{gap:44px}
+    .reel{grid-template-columns:repeat(auto-fit,minmax(0,255px));gap:28px 22px}
   }
 
   /* statics */
@@ -145,6 +145,30 @@
   .fmeta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:44px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
   .disc{margin-top:46px;font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.7;max-width:80ch}
 
+
+  svg.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  svg.ic.sm{width:17px;height:17px}
+
+  .stack{padding-block:104px;border-top:1px solid var(--line)}
+  .sgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:46px 38px;margin-top:52px}
+  .sgroup h4{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:15px;font-weight:700;letter-spacing:-.012em}
+  .sgroup h4 svg{color:var(--accent)}
+  .sgroup ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .sgroup li{display:flex;align-items:center;gap:11px;font-size:15px;color:var(--ink-2);line-height:1.4}
+  .sgroup li svg{color:var(--ink-3)}
+
+  .mapwrap{margin-top:50px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);padding:26px 22px;overflow-x:auto}
+  .mapwrap svg{width:100%;min-width:820px;height:auto;display:block}
+  .mp-box{fill:#F4F3F0;stroke:#C9C6BE;stroke-width:1.2}
+  .mp-t{font-family:var(--sans);font-size:15px;font-weight:700;fill:#121316;letter-spacing:-.01em}
+  .mp-d{font-family:var(--mono);font-size:11px;fill:#6E7076}
+  .mp-n{font-family:var(--mono);font-size:10.5px;font-weight:600;fill:#D7301F;letter-spacing:.1em}
+  .mp-line{stroke:#C9C6BE;stroke-width:1.6;fill:none}
+  .mp-loop{stroke:#D7301F;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+  .mp-loopt{font-family:var(--mono);font-size:10.5px;fill:#D7301F;letter-spacing:.04em}
+  .mp-pill{fill:#F4F3F0;stroke:#D7301F;stroke-width:1.1}
+  .mp-pt{font-family:var(--mono);font-size:11px;fill:#D7301F;font-weight:600}
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(16px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
   .js-anim .rv.in{opacity:1;transform:none}
@@ -154,6 +178,23 @@
     *{animation:none!important;transition:none!important}
   }
 </style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="ic-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+<symbol id="ic-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></symbol>
+<symbol id="ic-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M6.5 10v4a3 3 0 0 0 3 3h4.5"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 24 24"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="12" width="3" height="6"/><rect x="11" y="8" width="3" height="10"/><rect x="16" y="4" width="3" height="14"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><polyline points="9 12 11 14 15 10"/></symbol>
+<symbol id="ic-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/></symbol>
+<symbol id="ic-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><polyline points="4 17 9 12 13 16 16 14 20 18"/></symbol>
+<symbol id="ic-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="10" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="21"/></symbol>
+<symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
+<symbol id="ic-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-7.97A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/></symbol>
+<symbol id="ic-send" viewBox="0 0 24 24"><path d="M21 3l-7 18-3.5-7.5L3 10z"/><path d="M21 3L10.5 13.5"/></symbol>
+<symbol id="ic-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></symbol>
+<symbol id="ic-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><polyline points="3 12 12 17 21 12"/><polyline points="3 16 12 21 21 16"/></symbol>
+<symbol id="ic-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 10-10a2.1 2.1 0 0 0-3-3L5 16z"/><line x1="14" y1="7" x2="17" y2="10"/></symbol>
+</svg>
 
 <div id="bar"></div>
 
@@ -181,10 +222,43 @@
     <p class="note rv">Client-reported, specific campaigns. Full data on request.</p>
   </header>
 
+  <!-- ---------------------------------------------------------- APEX -->
+  <section class="case">
+    <div class="panel">
+      <div class="mono rv">01 &mdash; Meta &middot; United States</div>
+      <h2 class="rv">Apex Operations</h2>
+      <p class="rv">A San Jose agency selling lead generation to contractors across 28 states, on a guarantee: 150 qualified leads in 90 days, or they work free.</p>
+      <p class="rv">Shot 4K vertical, in the vocabulary the trade actually uses.</p>
+      <div class="metric rv"><span class="v">7.0%</span><span class="l">click-through rate</span></div>
+    </div>
+
+    <div class="reel">
+      <div class="card rv">
+        <div class="vidwrap">
+          <span class="tag">Offer first</span>
+          <video src="vid/ax_street.mp4" poster="img/apex1.jpg" muted loop playsinline preload="none"></video>
+          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
+        </div>
+        <p class="hook">&ldquo;That isn't a marketing strategy. That's hope.&rdquo;</p>
+        <p class="why">Sharpest line in the set. Names the behaviour, then takes it away.</p>
+      </div>
+
+      <div class="card rv">
+        <div class="vidwrap">
+          <span class="tag">On site</span>
+          <video src="vid/ax_site.mp4" poster="img/apex2.jpg" muted loop playsinline preload="none"></video>
+          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
+        </div>
+        <p class="hook">&ldquo;Roofer, ADU builder, renovator, general contractor.&rdquo;</p>
+        <p class="why">ADU is a California permit class. A contractor hears it and knows someone did the homework.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ---------------------------------------------------------- BLUEMAGIC -->
   <section class="case">
     <div class="panel">
-      <div class="mono rv">01 &mdash; Meta &middot; UK and EU</div>
+      <div class="mono rv">02 &mdash; Meta &middot; UK and EU</div>
       <h2 class="rv">BlueMagic Group</h2>
       <p class="rv">An Istanbul hair-transplant clinic selling a home protocol into one of the most expensive lead-gen categories on Meta.</p>
       <p class="rv">Four slots. I spent them on four different ways in, not four cuts of the same one.</p>
@@ -234,39 +308,6 @@
     </div>
   </section>
 
-  <!-- ---------------------------------------------------------- APEX -->
-  <section class="case">
-    <div class="panel">
-      <div class="mono rv">02 &mdash; Meta &middot; United States</div>
-      <h2 class="rv">Apex Operations</h2>
-      <p class="rv">A San Jose agency selling lead generation to contractors across 28 states, on a guarantee: 150 qualified leads in 90 days, or they work free.</p>
-      <p class="rv">Shot 4K vertical, in the vocabulary the trade actually uses.</p>
-      <div class="metric rv"><span class="v">7.0%</span><span class="l">click-through rate</span></div>
-    </div>
-
-    <div class="reel">
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">Offer first</span>
-          <video src="vid/ax_street.mp4" poster="img/apex1.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;That isn't a marketing strategy. That's hope.&rdquo;</p>
-        <p class="why">Sharpest line in the set. Names the behaviour, then takes it away.</p>
-      </div>
-
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">On site</span>
-          <video src="vid/ax_site.mp4" poster="img/apex2.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;Roofer, ADU builder, renovator, general contractor.&rdquo;</p>
-        <p class="why">ADU is a California permit class. A contractor hears it and knows someone did the homework.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ---------------------------------------------------------- ECHO -->
   <section class="case">
     <div class="panel">
@@ -306,21 +347,131 @@
     </div>
   </section>
 
-  <!-- ---------------------------------------------------------- SYSTEM -->
-  <section class="system">
-    <div class="mono rv">05 &mdash; The part most people skip</div>
-    <h3 class="big rv">I build the pipeline too.</h3>
-    <p class="lede rv">Echo runs on roughly 3,450 lines of Python I wrote. Anyone can prompt a tool. This is the difference between making an ad and owning the capacity to make a hundred, with quality gates and a cost model I can defend.</p>
 
-    <div class="pipe rv">
-      <span>build</span><i>&rarr;</i><span>generate</span><i>&rarr;</i><span>QC</span><i>&rarr;</i><span>compose</span><i>&rarr;</i><span>publish</span><i>&rarr;</i><span>deliver</span>
+  <section class="system" style="padding-block:96px 0;border-top:0">
+    <div class="mono rv">The Echo pipeline, what actually runs</div>
+    <h3 class="big rv">One command. Six stages. A gate that can send it back.</h3>
+
+    <div class="mapwrap rv">
+      <svg viewBox="0 0 1000 470" role="img" aria-label="Diagram of the Echo production pipeline: three agent skills feed a build stage, then generate, quality control, compose, approval and publish, with a re-roll loop from quality control back to generate.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C9C6BE"/></marker>
+          <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#D7301F"/></marker>
+        </defs>
+
+        <rect class="mp-pill" x="20" y="12" width="152" height="30" rx="15"/>
+        <text class="mp-pt" x="96" y="31" text-anchor="middle">maya-voice</text>
+        <rect class="mp-pill" x="184" y="12" width="152" height="30" rx="15"/>
+        <text class="mp-pt" x="260" y="31" text-anchor="middle">hook-forge</text>
+        <rect class="mp-pill" x="348" y="12" width="152" height="30" rx="15"/>
+        <text class="mp-pt" x="424" y="31" text-anchor="middle">body-refresh</text>
+        <path class="mp-line" d="M260 42 L260 66 L160 66"/>
+        <path class="mp-line" d="M424 42 L424 66 L160 66"/>
+        <path class="mp-line" d="M96 42 L96 66 L160 66 L160 92" marker-end="url(#ah)"/>
+
+        <rect class="mp-box" x="20" y="92" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="40" y="120">01 BUILD</text>
+        <text class="mp-t" x="40" y="148">Script to timeline</text>
+        <text class="mp-d" x="40" y="170">35 scripts prepared</text>
+        <text class="mp-d" x="40" y="186">Nine second chunk cap</text>
+
+        <rect class="mp-box" x="360" y="92" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="380" y="120">02 GENERATE</text>
+        <text class="mp-t" x="380" y="148">Face, voice, motion</text>
+        <text class="mp-d" x="380" y="170">kling3_0 and ElevenLabs</text>
+        <text class="mp-d" x="380" y="186">Twelve chunks per batch</text>
+
+        <rect class="mp-box" x="700" y="92" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="720" y="120">03 QC</text>
+        <text class="mp-t" x="720" y="148">The gate</text>
+        <text class="mp-d" x="720" y="170">Whisper diff, lip-sync,</text>
+        <text class="mp-d" x="720" y="186">brand safety frames</text>
+
+        <path class="mp-line" d="M300 144 L352 144" marker-end="url(#ah)"/>
+        <path class="mp-line" d="M640 144 L692 144" marker-end="url(#ah)"/>
+
+        <path class="mp-loop" d="M760 196 L760 232 L500 232 L500 196" marker-end="url(#ahr)"/>
+        <text class="mp-loopt" x="630" y="226" text-anchor="middle">re-roll, only if the meaning changed</text>
+
+        <path class="mp-line" d="M900 196 L900 252" marker-end="url(#ah)"/>
+
+        <rect class="mp-box" x="700" y="252" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="720" y="280">04 COMPOSE</text>
+        <text class="mp-t" x="720" y="308">Cut, caption, score</text>
+        <text class="mp-d" x="720" y="330">Overlays burn at compose,</text>
+        <text class="mp-d" x="720" y="346">so a restyle costs nothing</text>
+
+        <rect class="mp-box" x="360" y="252" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="380" y="280">05 APPROVE</text>
+        <text class="mp-t" x="380" y="308">Human, not bottleneck</text>
+        <text class="mp-d" x="380" y="330">Telegram preview</text>
+        <text class="mp-d" x="380" y="346">No reply in an hour, continue</text>
+
+        <rect class="mp-box" x="20" y="252" width="280" height="104" rx="10"/>
+        <text class="mp-n" x="40" y="280">06 PUBLISH</text>
+        <text class="mp-t" x="40" y="308">Scheduled, hands off</text>
+        <text class="mp-d" x="40" y="330">Meta Graph API</text>
+        <text class="mp-d" x="40" y="346">rclone sync to Drive</text>
+
+        <path class="mp-line" d="M700 304 L648 304" marker-end="url(#ah)"/>
+        <path class="mp-line" d="M360 304 L308 304" marker-end="url(#ah)"/>
+
+        <path class="mp-line" d="M160 356 L160 398" marker-end="url(#ah)"/>
+        <rect class="mp-pill" x="20" y="398" width="300" height="34" rx="17"/>
+        <text class="mp-pt" x="170" y="419" text-anchor="middle">15 delivered, to an 11.3K follower page</text>
+      </svg>
     </div>
 
     <div class="specs">
       <div class="rv"><div class="n">51,000</div><div class="t">words of transcript mined into a <b>measured voice profile</b>, so generated copy lands in the presenter's real cadence.</div></div>
-      <div class="rv"><div class="n">3</div><div class="t">custom agent skills. One writes hooks as <b>distinct archetypes</b> so every post tests a different lever. One rewords a script while <b>freezing every teaching point</b>, so A/B tests stay clean.</div></div>
-      <div class="rv"><div class="n">1 hr</div><div class="t">approval window over Telegram. <b>No reply and it continues</b> &mdash; a human in the loop who is not a bottleneck.</div></div>
-      <div class="rv"><div class="n">182</div><div class="t">reels of first-party data bucketed by posting hour. Best window ran a <b>median 31,834 views</b> against 12,466 in the worst.</div></div>
+      <div class="rv"><div class="n">0.50</div><div class="t">lip-sync correlation under nine seconds, against <b>0.31 over twelve</b>. That measurement is why the chunk cap exists.</div></div>
+      <div class="rv"><div class="n">14</div><div class="t">delivered videos re-titled for <b>zero generation spend</b>, because the pipeline keeps raw components by design.</div></div>
+      <div class="rv"><div class="n">182</div><div class="t">reels bucketed by posting hour. Best window ran a <b>median 31,834 views</b> against 12,466 in the worst.</div></div>
+    </div>
+  </section>
+
+
+  <section class="stack">
+    <div class="mono rv">What I work in</div>
+    <h3 class="big rv">The stack, and what each part is for.</h3>
+
+    <div class="sgroups">
+      <div class="sgroup rv">
+        <h4><svg class="ic"><use href="#ic-play"/></svg> Generation</h4>
+        <ul>
+          <li><svg class="ic sm"><use href="#ic-play"/></svg> Higgsfield, kling3_0</li>
+          <li><svg class="ic sm"><use href="#ic-image"/></svg> HeyGen, digital presenters</li>
+          <li><svg class="ic sm"><use href="#ic-mic"/></svg> ElevenLabs, voice direction</li>
+          <li><svg class="ic sm"><use href="#ic-layers"/></svg> Character held across a campaign</li>
+        </ul>
+      </div>
+      <div class="sgroup rv">
+        <h4><svg class="ic"><use href="#ic-flow"/></svg> Automation</h4>
+        <ul>
+          <li><svg class="ic sm"><use href="#ic-terminal"/></svg> Claude Code, Codex</li>
+          <li><svg class="ic sm"><use href="#ic-flow"/></svg> n8n, Make.com</li>
+          <li><svg class="ic sm"><use href="#ic-cpu"/></svg> Python, custom agent skills</li>
+          <li><svg class="ic sm"><use href="#ic-clock"/></svg> Human-in-the-loop approval gates</li>
+        </ul>
+      </div>
+      <div class="sgroup rv">
+        <h4><svg class="ic"><use href="#ic-target"/></svg> Strategy</h4>
+        <ul>
+          <li><svg class="ic sm"><use href="#ic-pen"/></svg> Hooks, angles, awareness levels</li>
+          <li><svg class="ic sm"><use href="#ic-target"/></svg> Offer and objection mapping</li>
+          <li><svg class="ic sm"><use href="#ic-shield"/></svg> Platform policy, read at scripting</li>
+          <li><svg class="ic sm"><use href="#ic-layers"/></svg> Batch design and creative testing</li>
+        </ul>
+      </div>
+      <div class="sgroup rv">
+        <h4><svg class="ic"><use href="#ic-chart"/></svg> Distribution</h4>
+        <ul>
+          <li><svg class="ic sm"><use href="#ic-chart"/></svg> Meta Ads Manager, CTR and CPL</li>
+          <li><svg class="ic sm"><use href="#ic-send"/></svg> Meta Graph API, scheduled publishing</li>
+          <li><svg class="ic sm"><use href="#ic-cloud"/></svg> rclone, Drive delivery</li>
+          <li><svg class="ic sm"><use href="#ic-chart"/></svg> First-party performance analysis</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -343,7 +494,6 @@
     <div class="fmeta rv">
       <span>New Delhi &middot; IST, overlaps US hours</span>
       <span><a href="https://linkedin.com/in/ayushsharmaaa">LinkedIn</a></span>
-      <span>Higgsfield &middot; HeyGen &middot; Claude Code &middot; n8n &middot; Make &middot; Python &middot; Meta Graph API</span>
     </div>
     <p class="disc rv">Click-through rates are client-reported for specific Meta campaigns and are not account averages or a forecast for any future campaign. Date ranges and spend available on request. Videos are compressed excerpts of delivered assets; client brands remain the property of their owners.</p>
   </footer>
