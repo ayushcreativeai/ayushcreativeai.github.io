@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="echoLogoTitle echoLogoDesc">
+  <title id="echoLogoTitle">Echo logo</title>
+  <desc id="echoLogoDesc">Rounded square background with a concentric echo ring.</desc>
+  <defs>
+    <linearGradient id="bgGradient" x1="96" y1="64" x2="448" y2="448" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8EEFA" />
+      <stop offset="0.35" stop-color="#B8D8F2" />
+      <stop offset="0.72" stop-color="#8BBCE0" />
+      <stop offset="1" stop-color="#6AAAD8" />
+    </linearGradient>
+    <linearGradient id="ringGradient" x1="126" y1="126" x2="386" y2="386" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9ACDE8" />
+      <stop offset="0.32" stop-color="#7AB8E0" />
+      <stop offset="0.62" stop-color="#4A8EC0" />
+      <stop offset="1" stop-color="#8FC7E6" />
+    </linearGradient>
+    <radialGradient id="coreGradient" cx="38%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#EEF6FF" />
+      <stop offset="0.45" stop-color="#D8EEFA" />
+      <stop offset="1" stop-color="#C8E4F5" />
+    </radialGradient>
+    <filter id="dropSoft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="16" flood-color="#5AA0DC" flood-opacity="0.28" />
+    </filter>
+    <filter id="ringGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#2E78B4" flood-opacity="0.22" />
+    </filter>
+  </defs>
+  <rect x="32" y="32" width="448" height="448" rx="108" fill="url(#bgGradient)" filter="url(#dropSoft)" />
+  <circle cx="256" cy="256" r="146" fill="url(#ringGradient)" filter="url(#ringGlow)" />
+  <circle cx="256" cy="256" r="82" fill="url(#coreGradient)" />
+  <circle cx="256" cy="256" r="146" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="4" />
+  <circle cx="256" cy="256" r="82" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="3" />
+</svg>
