@@ -146,8 +146,8 @@
   .disc{margin-top:46px;font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.7;max-width:80ch}
 
   /* reveal */
-  .rv{opacity:0;transform:translateY(16px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
-  .rv.in{opacity:1;transform:none}
+  .js-anim .rv{opacity:0;transform:translateY(16px);transition:opacity .62s var(--ease),transform .62s var(--ease)}
+  .js-anim .rv.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
@@ -353,6 +353,12 @@
 <script>
 (function(){
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-anim');
+  }
+  setTimeout(function(){
+    document.querySelectorAll('.rv').forEach(function(e){ e.classList.add('in'); });
+  }, 2600);
 
   var bar = document.getElementById('bar');
   addEventListener('scroll', function(){
