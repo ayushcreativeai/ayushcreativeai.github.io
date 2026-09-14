@@ -14,8 +14,10 @@
     --ink-3:#6B7B84;
     --line:#BDC3C7;
     --line-2:#A9B2B6;
-    --accent:#34495E;
-    --mark:#7F8C8D;
+    --accent:#E67E22;
+    --accent-deep:#D35400;
+    --accent-ink:#A84E06;
+    --mark:#F39C12;
     --ease:cubic-bezier(.32,.72,0,1);
     --hair:rgba(44,62,80,.12);
     --hair-2:rgba(44,62,80,.20);
@@ -40,9 +42,9 @@
 
   .mono{
     display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:500;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
-    padding:6px 13px;border-radius:999px;background:var(--shell);
-    box-shadow:0 0 0 1px var(--hair);
+    letter-spacing:.2em;text-transform:uppercase;
+    padding:6px 13px;border-radius:999px;background:rgba(230,126,34,.10);
+    box-shadow:0 0 0 1px rgba(230,126,34,.24);color:var(--accent-ink);
   }
 
   /* progress */
@@ -62,7 +64,7 @@
   .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   nav .mail{
     font-family:var(--mono);font-size:11.5px;display:flex;align-items:center;gap:9px;
-    padding:8px 8px 8px 16px;border-radius:999px;background:var(--ink);color:#ECF0F1;
+    padding:8px 8px 8px 16px;border-radius:999px;background:var(--accent-ink);color:#FFF;
     transition:transform .5s var(--ease);
   }
   nav .mail:hover{transform:translateY(-1px)}
@@ -81,7 +83,7 @@
     font-size:clamp(44px,7.4vw,104px);line-height:.96;letter-spacing:-.042em;
     font-weight:900;margin:0;max-width:16ch;text-wrap:balance;
   }
-  h1 .q{color:var(--accent)}
+  h1 .q{color:var(--accent-deep)}
   .sub{margin:34px 0 0;font-size:clamp(18px,2vw,22px);color:var(--ink-2);max-width:46ch;line-height:1.45}
 
   /* proof */
@@ -100,7 +102,7 @@
   .panel h2{font-size:clamp(30px,3.6vw,46px);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:14px 0 0}
   .panel p{color:var(--ink-2);margin:18px 0 0;font-size:17px;max-width:34ch}
   .metric{display:flex;align-items:baseline;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--hair)}
-  .metric .v{font-size:52px;font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+  .metric .v{font-size:52px;font-weight:900;letter-spacing:-.04em;color:var(--accent-deep);line-height:1;font-variant-numeric:tabular-nums}
   .metric .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);max-width:12ch;line-height:1.4}
 
   .reel{
@@ -160,7 +162,7 @@
   .sgrid figure:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb-hi), 0 0 0 1px var(--hair-2)}
   .sgrid img{aspect-ratio:4/5;object-fit:cover;border-radius:12px}
   .sgrid figcaption{margin:11px 5px 4px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);line-height:1.45}
-  .sgrid b{display:block;font-family:var(--sans);font-size:13px;letter-spacing:-.01em;color:var(--ink);text-transform:none;font-weight:600;margin-bottom:5px}
+  .sgrid b{display:block;font-family:var(--sans);font-size:13px;letter-spacing:-.01em;color:var(--accent-ink);text-transform:none;font-weight:600;margin-bottom:5px}
 
   h3.big{font-size:clamp(28px,4vw,50px);line-height:1.02;letter-spacing:-.038em;font-weight:800;margin:14px 0 0;max-width:20ch;text-wrap:balance}
   .lede{color:var(--ink-2);margin:20px 0 0;max-width:56ch;font-size:18px}
@@ -221,11 +223,11 @@
   .hcard p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
   .dl{
     display:inline-flex;align-items:center;gap:14px;margin-top:42px;
-    padding:14px 14px 14px 26px;border-radius:999px;background:var(--ink);color:var(--paper);
+    padding:14px 14px 14px 26px;border-radius:999px;background:var(--accent-ink);color:#FFF;
     font-size:15px;font-weight:600;letter-spacing:-.01em;
     transition:transform .5s var(--ease),background .4s var(--ease);
   }
-  .dl:hover{transform:translateY(-2px);background:var(--accent)}
+  .dl:hover{transform:translateY(-2px);background:var(--ink)}
   .dl:active{transform:scale(.98)}
   .dl .nub3{
     width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.16);
@@ -241,7 +243,7 @@
     filter:blur(80px);opacity:.72;will-change:transform;
   }
   #amb .a{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,rgba(52,73,94,.16),transparent 68%);animation:drift1 92s var(--ease) infinite alternate}
-  #amb .b{width:46vw;height:46vw;right:-10vw;top:26vh;background:radial-gradient(circle,rgba(127,140,141,.20),transparent 68%);animation:drift2 118s var(--ease) infinite alternate}
+  #amb .b{width:46vw;height:46vw;right:-10vw;top:26vh;background:radial-gradient(circle,rgba(230,126,34,.20),transparent 68%);animation:drift2 118s var(--ease) infinite alternate}
   #amb .c{width:40vw;height:40vw;left:24vw;bottom:-16vw;background:radial-gradient(circle,rgba(44,62,80,.12),transparent 70%);animation:drift3 104s var(--ease) infinite alternate}
   #grain{
     position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
@@ -285,10 +287,10 @@
   .shot{border-radius:16px;overflow:hidden;background:var(--paper)}
   .shot img{width:100%;aspect-ratio:8/5;object-fit:cover;display:block}
   .stage figcaption{padding:16px 12px 10px}
-  .sn{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .sn{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
   .loop{
     margin-left:9px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;
-    text-transform:uppercase;color:var(--accent);border:1px dashed var(--accent);
+    text-transform:uppercase;color:var(--accent-ink);border:1px dashed var(--accent);background:rgba(230,126,34,.09);
     padding:3px 8px;border-radius:999px;white-space:nowrap;
   }
   .stage p{margin:11px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
@@ -312,7 +314,7 @@
   .beat.flip{background:var(--ink);box-shadow:none}
   .bl{
     display:inline-flex;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--accent);
+    text-transform:uppercase;color:var(--accent-ink);
   }
   .beat.flip .bl{color:#BDC3C7}
   .bq{
@@ -338,17 +340,18 @@
   .n,.metric .v,.bnums b,.specs .n{position:relative;display:inline-block}
   .n::after,.metric .v::after,.bnums b::after{
     content:"";position:absolute;left:-4px;right:-4px;bottom:.07em;height:.34em;
-    background:var(--mark);opacity:.34;z-index:-1;border-radius:2px;
+    background:var(--mark);opacity:.42;z-index:-1;border-radius:2px;
     transform:scaleX(0);transform-origin:left center;
     transition:transform .85s var(--ease) .15s;
   }
   .in .n::after,.in.metric .v::after,.in .bnums b::after,.rv.in .n::after{transform:scaleX(1)}
   .bnums b{font-size:clamp(38px,4.4vw,58px)}
-  .metric .v{color:var(--ink)}
+  .metric .v{color:var(--accent-deep)}
 
   .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
   .tri>div{
-    padding:26px 24px;border-radius:20px;background:var(--shell);
+    padding:26px 24px 26px 26px;border-radius:0 20px 20px 0;background:var(--shell);
+    border-left:3px solid var(--accent);
     box-shadow:0 1px 0 rgba(255,255,255,.85) inset, 0 0 0 1px var(--hair);
   }
   .tri p{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
@@ -837,9 +840,9 @@
     var LINES = [
       {amp:44, len:0.0022, sp:0.00022, y:0.24, c:'44,62,80',  a:0.16, lw:1.4},
       {amp:64, len:0.0016, sp:0.00016, y:0.42, c:'52,73,94',  a:0.13, lw:1.6},
-      {amp:38, len:0.0029, sp:0.00030, y:0.58, c:'127,140,141',a:0.20, lw:1.2},
+      {amp:38, len:0.0029, sp:0.00030, y:0.58, c:'230,126,34', a:0.26, lw:1.4},
       {amp:80, len:0.0012, sp:0.00012, y:0.74, c:'44,62,80',  a:0.10, lw:1.8},
-      {amp:30, len:0.0035, sp:0.00026, y:0.88, c:'127,140,141',a:0.16, lw:1.1}
+      {amp:30, len:0.0035, sp:0.00026, y:0.88, c:'243,156,18', a:0.18, lw:1.1}
     ];
     var t = 0, raf = null;
     function draw(now){
