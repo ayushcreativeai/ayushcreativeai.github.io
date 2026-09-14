@@ -102,7 +102,15 @@
   .metric .v{font-size:52px;font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
   .metric .l{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);max-width:12ch;line-height:1.4}
 
-  .reel{display:grid;grid-template-columns:repeat(2,minmax(0,306px));gap:34px 30px;justify-content:start}
+  .reel{
+    display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x proximity;padding:4px 4px 22px;margin:-4px -4px 0;
+    scrollbar-width:thin;scrollbar-color:var(--hair-2) transparent;
+  }
+  .reel::-webkit-scrollbar{height:8px}
+  .reel::-webkit-scrollbar-thumb{background:var(--hair-2);border-radius:99px}
+  .reel::-webkit-scrollbar-track{background:transparent}
+  .card{flex:0 0 252px;scroll-snap-align:start}
   .card{position:relative}
   .vidwrap{
     position:relative;padding:7px;border-radius:26px;background:var(--shell);
@@ -124,13 +132,14 @@
   }
   .snd:hover{background:var(--accent)}
   .snd:active{transform:scale(.96)}
-  .hook{margin:18px 0 0;font-size:18.5px;line-height:1.32;letter-spacing:-.02em;font-weight:600}
-  .why{margin:10px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6}
+  .hook{margin:16px 0 0;font-size:16.5px;line-height:1.34;letter-spacing:-.018em;font-weight:600}
+  .why{margin:9px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.03em;line-height:1.6}
 
   @media(max-width:900px){
     .case{grid-template-columns:1fr;gap:36px;padding-block:68px}
     .panel{position:static}
-    .reel{grid-template-columns:repeat(auto-fit,minmax(0,255px));gap:28px 22px}
+    .reel{gap:16px}
+    .card{flex:0 0 214px}
   }
 
   /* statics */
@@ -238,7 +247,7 @@
   #amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
   #amb i{
     position:absolute;display:block;border-radius:50%;
-    filter:blur(90px);opacity:.5;will-change:transform;
+    filter:blur(80px);opacity:.72;will-change:transform;
   }
   #amb .a{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,rgba(215,48,31,.10),transparent 68%);animation:drift1 92s var(--ease) infinite alternate}
   #amb .b{width:46vw;height:46vw;right:-10vw;top:26vh;background:radial-gradient(circle,rgba(74,142,192,.13),transparent 68%);animation:drift2 118s var(--ease) infinite alternate}
@@ -262,6 +271,71 @@
   .pblock p{margin:16px 0 0;font-size:16px;color:var(--ink-2);line-height:1.6}
   @media(max-width:820px){.pblock{grid-template-columns:1fr}}
 
+
+  .brand{display:flex;align-items:center;gap:14px;margin:18px 0 0;min-height:34px}
+  .brand img{width:auto;height:auto;display:block}
+  .brand.echo img{max-height:46px}
+  .brand.echo span{font-size:40px;font-weight:800;letter-spacing:-.04em;line-height:1}
+
+  .prail{
+    display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;margin-top:46px;
+    padding:4px 4px 22px;scroll-snap-type:x proximity;
+    scrollbar-width:thin;scrollbar-color:var(--hair-2) transparent;
+  }
+  .prail::-webkit-scrollbar{height:8px}
+  .prail::-webkit-scrollbar-thumb{background:var(--hair-2);border-radius:99px}
+  .stage{
+    flex:0 0 336px;margin:0;scroll-snap-align:start;
+    padding:9px;border-radius:24px;background:var(--shell);
+    box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 0 0 1px var(--hair);
+    transition:transform .6s var(--ease),box-shadow .6s var(--ease);
+  }
+  .stage:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, var(--amb), 0 0 0 1px var(--hair-2)}
+  .shot{border-radius:16px;overflow:hidden;background:var(--paper)}
+  .shot img{width:100%;aspect-ratio:8/5;object-fit:cover;display:block}
+  .stage figcaption{padding:16px 12px 10px}
+  .sn{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+  .loop{
+    margin-left:9px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent);border:1px dashed var(--accent);
+    padding:3px 8px;border-radius:999px;white-space:nowrap;
+  }
+  .stage p{margin:11px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+
+  /* drifting production grid, under everything */
+  #grid{
+    position:fixed;inset:-20% -20% -20% -20%;z-index:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(circle at 1px 1px, rgba(18,19,22,.13) 1px, transparent 0);
+    background-size:34px 34px;
+    animation:gridDrift 64s linear infinite;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 42%, #000 20%, transparent 78%);
+    mask-image:radial-gradient(ellipse 70% 60% at 50% 42%, #000 20%, transparent 78%);
+  }
+  @keyframes gridDrift{to{transform:translate3d(34px,34px,0)}}
+
+
+  .beat{
+    margin-top:46px;padding:40px 40px 38px;border-radius:26px;background:var(--shell);
+    box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 0 0 1px var(--hair);
+  }
+  .beat.flip{background:var(--ink);box-shadow:none}
+  .bl{
+    display:inline-flex;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);
+  }
+  .beat.flip .bl{color:#FF7A66}
+  .bq{
+    margin:20px 0 0;font-size:clamp(26px,3.5vw,42px);line-height:1.12;letter-spacing:-.035em;
+    font-weight:800;max-width:22ch;text-wrap:balance;
+  }
+  .beat.flip .bq{color:var(--paper)}
+  .bp{margin:22px 0 0;font-size:17px;line-height:1.62;color:var(--ink-2);max-width:62ch}
+  .beat.flip .bp{color:rgba(244,243,240,.72)}
+  .bnums{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:30px;margin-top:26px}
+  .bnums b{display:block;font-size:52px;font-weight:900;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
+  .bnums span{display:block;margin-top:12px;font-size:15px;color:var(--ink-2);line-height:1.5}
+  @media(max-width:700px){.beat{padding:28px 24px}}
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
     transition:opacity .88s var(--ease),transform .88s var(--ease),filter .88s var(--ease)}
@@ -270,6 +344,7 @@
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
     #amb i{animation:none}
+    #grid{animation:none}
     *{animation:none!important;transition:none!important}
   }
 </style>
@@ -292,6 +367,7 @@
 </svg>
 
 <div id="amb" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+<div id="grid" aria-hidden="true"></div>
 <div id="grain" aria-hidden="true"></div>
 <div id="bar"></div>
 
@@ -300,7 +376,7 @@
     <div class="island">
       <b>Ayush Sharma</b>
       <span class="avail"><span class="dot"></span> Available, remote</span>
-      <a class="mail" href="https://t.me/+919911549325">Message me
+      <a class="mail" href="https://t.me/ayushsharmatelegram">Message me
         <span class="nub"><svg class="ic sm" style="width:13px;height:13px"><use href="#ic-send"/></svg></span>
       </a>
     </div>
@@ -327,8 +403,7 @@
   <section class="case">
     <div class="panel">
       <div class="mono rv">01 &mdash; Meta &middot; United States</div>
-      <img class="clogo rv" src="img/logo/apex.png" alt="Apex Operations logo" style="max-height:26px">
-      <h2 class="rv">Apex Operations</h2>
+      <h2 class="rv brand"><img src="img/logo/apex.png" alt="Apex Operations" style="max-height:32px"></h2>
       <p class="rv">A San Jose agency selling lead generation to contractors across 28 states, on a guarantee: 150 qualified leads in 90 days, or they work free.</p>
       <p class="rv">Shot 4K vertical, in the vocabulary the trade actually uses.</p>
       <div class="metric rv"><span class="v">7.0%</span><span class="l">click-through rate</span></div>
@@ -361,8 +436,7 @@
   <section class="case">
     <div class="panel">
       <div class="mono rv">02 &mdash; Meta &middot; UK and EU</div>
-      <img class="clogo rv" src="img/logo/bluemagic.svg" alt="BlueMagic Group logo" style="max-height:40px">
-      <h2 class="rv">BlueMagic Group</h2>
+      <h2 class="rv brand"><img src="img/logo/bluemagic.svg" alt="BlueMagic Group" style="max-height:52px"></h2>
       <p class="rv">An Istanbul hair-transplant clinic selling a home protocol into one of the most expensive lead-gen categories on Meta.</p>
       <p class="rv">Four slots. I spent them on four different ways in, not four cuts of the same one.</p>
       <div class="metric rv"><span class="v">9.8%</span><span class="l">click-through rate</span></div>
@@ -415,8 +489,7 @@
   <section class="case">
     <div class="panel">
       <div class="mono rv">03 &mdash; Organic &middot; app installs</div>
-      <img class="clogo rv" src="img/logo/echo.svg" alt="Echo logo" style="max-height:46px">
-      <h2 class="rv">Echo</h2>
+      <h2 class="rv brand echo"><img src="img/logo/echo.svg" alt=""><span>Echo</span></h2>
       <p class="rv">A daily posting schedule for a live app, fronted by a presenter who does not exist.</p>
       <p class="rv">By hand, one video costs a day. Thirty five of them is not a content problem. It is a manufacturing one.</p>
       <div class="metric rv"><span class="v">35</span><span class="l">shipped end to end</span></div>
@@ -460,23 +533,13 @@
   <section class="case">
     <div class="panel">
       <div class="mono rv">04 &mdash; Meta &middot; Australia</div>
-      <img class="clogo rv" src="img/logo/techytantrums.png" alt="Techy Tantrums logo" style="max-height:34px">
-      <h2 class="rv">Techy Tantrums</h2>
+      <h2 class="rv brand"><img src="img/logo/techytantrums.png" alt="Techy Tantrums" style="max-height:40px"></h2>
       <p class="rv">My own agency. I am co-founder and creative chief, and I own the production standard on everything that ships.</p>
       <p class="rv">One presenter who does not exist, held across three shoots, three wardrobes and three locations.</p>
       <div class="metric rv"><span class="v">1</span><span class="l">face, three shoots</span></div>
     </div>
 
     <div class="reel">
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">Pattern interrupt</span>
-          <video src="vid/tt_future.mp4" poster="img/tt_future.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;I just travelled back from five years in the future to stop you making a decision you will regret.&rdquo;</p>
-        <p class="why">A different hook archetype entirely, run against the direct-callout control.</p>
-      </div>
 
       <div class="card rv">
         <div class="vidwrap">
@@ -522,86 +585,71 @@
     <h3 class="big rv">So I stopped making videos, and built the line that makes them.</h3>
 
 
-    <div class="pblock">
-      <div class="rv">
-        <span class="mono">The problem</span>
-        <p>One video by hand is a day gone: write it, generate every chunk, listen to every syllable, cut, caption, upload. Five slots a week is five days of work, so the schedule eats the whole role. And rushing is worse than slow, because a drifted lip sync or one garbled word kills the chunk and you pay to make it twice.</p>
-      </div>
-      <div class="rv">
-        <span class="mono">What I built</span>
-        <p>A line, not a checklist. One command carries a script to a scheduled post. Every stage is resumable, so a crash costs minutes instead of a batch. Failures are caught by a gate rather than by someone watching. The only human decision left is an approval, and it times out after an hour and continues without me.</p>
+    <div class="beat rv">
+      <span class="bl">The problem</span>
+      <p class="bq">Thirty five videos. A day of work in each. Five slots a week to fill.</p>
+      <p class="bp">Do that arithmetic and the posting schedule consumes the entire role, forever. Worse, rushing costs more than going slow: one drifted lip sync or one garbled word kills the chunk, and you pay to generate it a second time. Hand production does not scale here. It just gets more expensive.</p>
+    </div>
+
+    <div class="beat rv flip">
+      <span class="bl">The solution</span>
+      <p class="bq">So I stopped making videos, and built the line that makes them.</p>
+      <p class="bp">One command carries a script from plan to scheduled post. Every stage is resumable, so a crash costs minutes instead of a batch. A transcript gate catches wrong words before anyone watches a frame. The only human decision left is an approval, and it times out after an hour and continues without me.</p>
+    </div>
+
+    <div class="beat rv">
+      <span class="bl">What that bought</span>
+      <div class="bnums">
+        <div><b>35</b><span>delivered end to end, not 15 and a backlog</span></div>
+        <div><b>0</b><span>credits to restyle all 14 title cards, because the pipeline keeps its parts</span></div>
+        <div><b>386</b><span>credits saved by proving a timed-out job had already been charged</span></div>
       </div>
     </div>
 
-    <div class="mapwrap rv"><div class="mapinner">
-      <svg viewBox="0 0 1000 470" role="img" aria-label="Diagram of the Echo production pipeline: three agent skills feed a build stage, then generate, quality control, compose, approval and publish, with a re-roll loop from quality control back to generate.">
-        <defs>
-          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#C9C6BE"/></marker>
-          <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#D7301F"/></marker>
-        </defs>
-
-        <rect class="mp-pill" x="20" y="12" width="152" height="30" rx="15"/>
-        <text class="mp-pt" x="96" y="31" text-anchor="middle">maya-voice</text>
-        <rect class="mp-pill" x="184" y="12" width="152" height="30" rx="15"/>
-        <text class="mp-pt" x="260" y="31" text-anchor="middle">hook-forge</text>
-        <rect class="mp-pill" x="348" y="12" width="152" height="30" rx="15"/>
-        <text class="mp-pt" x="424" y="31" text-anchor="middle">body-refresh</text>
-        <path class="mp-line" d="M260 42 L260 66 L160 66"/>
-        <path class="mp-line" d="M424 42 L424 66 L160 66"/>
-        <path class="mp-line" d="M96 42 L96 66 L160 66 L160 92" marker-end="url(#ah)"/>
-
-        <rect class="mp-box" x="20" y="92" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="40" y="120">01 BUILD</text>
-        <text class="mp-t" x="40" y="148">Script to timeline</text>
-        <text class="mp-d" x="40" y="170">35 scripts, all delivered</text>
-        <text class="mp-d" x="40" y="186">Nine second chunk cap</text>
-
-        <rect class="mp-box" x="360" y="92" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="380" y="120">02 GENERATE</text>
-        <text class="mp-t" x="380" y="148">Face, voice, motion</text>
-        <text class="mp-d" x="380" y="170">kling3_0 and ElevenLabs</text>
-        <text class="mp-d" x="380" y="186">Twelve chunks per batch</text>
-
-        <rect class="mp-box" x="700" y="92" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="720" y="120">03 QC</text>
-        <text class="mp-t" x="720" y="148">The gate</text>
-        <text class="mp-d" x="720" y="170">Whisper diff, lip-sync,</text>
-        <text class="mp-d" x="720" y="186">brand safety frames</text>
-
-        <path class="mp-line" d="M300 144 L352 144" marker-end="url(#ah)"/>
-        <path class="mp-line" d="M640 144 L692 144" marker-end="url(#ah)"/>
-
-        <path class="mp-loop" d="M760 196 L760 232 L500 232 L500 196" marker-end="url(#ahr)"/>
-        <text class="mp-loopt" x="630" y="226" text-anchor="middle">re-roll, only if the meaning changed</text>
-
-        <path class="mp-line" d="M900 196 L900 252" marker-end="url(#ah)"/>
-
-        <rect class="mp-box" x="700" y="252" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="720" y="280">04 COMPOSE</text>
-        <text class="mp-t" x="720" y="308">Cut, caption, score</text>
-        <text class="mp-d" x="720" y="330">Overlays burn at compose,</text>
-        <text class="mp-d" x="720" y="346">so a restyle costs nothing</text>
-
-        <rect class="mp-box" x="360" y="252" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="380" y="280">05 APPROVE</text>
-        <text class="mp-t" x="380" y="308">Human, not bottleneck</text>
-        <text class="mp-d" x="380" y="330">Telegram preview</text>
-        <text class="mp-d" x="380" y="346">No reply in an hour, continue</text>
-
-        <rect class="mp-box" x="20" y="252" width="280" height="104" rx="10"/>
-        <text class="mp-n" x="40" y="280">06 PUBLISH</text>
-        <text class="mp-t" x="40" y="308">Scheduled, hands off</text>
-        <text class="mp-d" x="40" y="330">Meta Graph API</text>
-        <text class="mp-d" x="40" y="346">rclone sync to Drive</text>
-
-        <path class="mp-line" d="M700 304 L648 304" marker-end="url(#ah)"/>
-        <path class="mp-line" d="M360 304 L308 304" marker-end="url(#ah)"/>
-
-        <path class="mp-line" d="M160 356 L160 398" marker-end="url(#ah)"/>
-        <rect class="mp-pill" x="20" y="398" width="300" height="34" rx="17"/>
-        <text class="mp-pt" x="170" y="419" text-anchor="middle">35 delivered, to an 11.3K follower page</text>
-      </svg>
-    </div></div>
+    <div class="prail">
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/01_build.jpg" alt="Build stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">01 &middot; Build</span>
+          <p>Script to timeline. Every chunk capped at nine seconds, because past that the lip sync drifts.</p>
+        </figcaption>
+      </figure>
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/02_generate.jpg" alt="Generate stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">02 &middot; Generate</span>
+          <p>Face, voice and motion generated in batches of twelve. kling3_0 and ElevenLabs.</p>
+        </figcaption>
+      </figure>
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/03_qc.jpg" alt="QC stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">03 &middot; QC</span><span class="loop">re-roll sends back to 02</span>
+          <p>Whisper transcribes the render and diffs it against the script. A changed meaning fails.</p>
+        </figcaption>
+      </figure>
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/04_compose.jpg" alt="Compose stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">04 &middot; Compose</span>
+          <p>Cuts, subtitles, title card, music. Overlays burn in here, so restyling costs no credits.</p>
+        </figcaption>
+      </figure>
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/05_approve.jpg" alt="Approve stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">05 &middot; Approve</span>
+          <p>One preview to Telegram. No reply inside the hour and the batch carries on without me.</p>
+        </figcaption>
+      </figure>
+      <figure class="stage rv">
+        <div class="shot"><img src="img/pipe/06_publish.jpg" alt="Publish stage of the pipeline" loading="lazy"></div>
+        <figcaption>
+          <span class="sn">06 &middot; Publish</span>
+          <p>Queued through the Meta Graph API with scheduled publish times. The laptop can be off.</p>
+        </figcaption>
+      </figure>
+    </div>
 
     <div class="specs">
       <div class="rv"><div class="n">51,000</div><div class="t">words of transcript mined into a <b>measured voice profile</b>, so generated copy lands in the presenter's real cadence.</div></div>
@@ -695,7 +743,7 @@
     <a class="big-mail rv" href="mailto:ayushsharma.ut@gmail.com">ayushsharma.ut@gmail.com<span class="nub2"><svg class="ic" style="width:44%;height:44%"><use href="#ic-send"/></svg></span></a>
     <div class="fmeta rv">
       <span><a href="https://linkedin.com/in/ayushsharmaaa">LinkedIn</a></span>
-      <span><a href="https://t.me/+919911549325">Telegram</a></span>
+      <span><a href="https://t.me/ayushsharmatelegram">Telegram</a></span>
     </div>
     <p class="disc rv">Click-through rates are client-reported for specific Meta campaigns and are not account averages or a forecast for any future campaign. Date ranges and spend available on request. Videos are compressed excerpts of delivered assets; client brands remain the property of their owners.</p>
   </footer>
