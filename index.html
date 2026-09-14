@@ -357,6 +357,27 @@
   /* canvas motion graphics */
   #mg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;opacity:.9}
 
+
+  /* phones */
+  @media(max-width:760px){
+    .wrap{padding-inline:20px}
+    .stage{flex:0 0 min(304px, calc(100vw - 76px))}
+    .prail{gap:14px}
+    .sgrid figcaption{font-size:11px;letter-spacing:.06em}
+    .sgrid b{font-size:14px}
+    .why{font-size:12px}
+    .stage p{font-size:15px}
+    .beat,.tri>div{padding:24px 20px}
+    .hero-pad{padding-block:96px 64px}
+  }
+  /* touch: every control clears a 44px target */
+  @media(pointer:coarse){
+    .snd{padding:14px 16px;font-size:11px}
+    .tag{padding:9px 12px}
+    nav .mail{padding:11px 11px 11px 18px}
+    .dl{padding:16px 16px 16px 26px}
+  }
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
     transition:opacity .88s var(--ease),transform .88s var(--ease),filter .88s var(--ease)}
