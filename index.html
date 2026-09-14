@@ -281,14 +281,15 @@
   .stage:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb), 0 0 0 1px var(--hair-2)}
   .shot{border-radius:16px;overflow:hidden;background:var(--paper)}
   .shot img{width:100%;aspect-ratio:8/5;object-fit:cover;display:block}
-  .stage figcaption{padding:16px 12px 10px}
-  .sn{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  .stage figcaption{padding:18px 13px 12px}
+  .sn{font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:-.02em;color:var(--ink)}
   .loop{
     margin-left:9px;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.1em;
     text-transform:uppercase;color:var(--accent-ink);border:1px dashed var(--accent);background:rgba(230,126,34,.09);
     padding:3px 8px;border-radius:999px;white-space:nowrap;
   }
-  .stage p{margin:11px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
+  .sn em{font-style:normal;color:var(--accent-deep);margin-right:7px}
+  .stage p{margin:10px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-2)}
 
   /* drifting production grid, under everything */
   #grid{
@@ -308,8 +309,8 @@
   }
   .beat.flip{background:var(--ink);box-shadow:none}
   .bl{
-    display:inline-flex;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;
-    text-transform:uppercase;color:var(--accent-ink);
+    display:block;margin:0;font-family:var(--sans);font-size:19px;font-weight:700;
+    letter-spacing:-.02em;color:var(--ink);
   }
   .beat.flip .bl{color:#BDC3C7}
   .bq{
@@ -616,16 +617,16 @@
 
     <div class="tri">
       <div class="rv">
-        <span class="bl">The problem</span>
-        <p>Thirty five videos, a day of work in each, five slots a week to fill. Hand production does not scale here. It just gets more expensive every week.</p>
+        <h4 class="bl">The problem</h4>
+        <p>Thirty five videos, a day of work in each. Hand production does not scale here, it just gets more expensive every week.</p>
       </div>
       <div class="rv">
-        <span class="bl">What I did first</span>
-        <p>A full content audit before a single frame was made. I scored <b>182 of the account's own reels</b> by reach and posting hour, so the line was built around what already worked instead of guesses.</p>
+        <h4 class="bl">What I did first</h4>
+        <p>A full content audit before a single frame. I scored <b>182 of the account's own reels</b> by reach and posting hour.</p>
       </div>
       <div class="rv">
-        <span class="bl">The solution</span>
-        <p>One command carries a script to a scheduled post. Resumable at every stage, gated by a transcript check, and the last human decision times out after an hour.</p>
+        <h4 class="bl">The solution</h4>
+        <p>One command takes a script to a scheduled post, gated by a transcript check and an approval that times out in an hour.</p>
       </div>
     </div>
 
@@ -640,42 +641,42 @@
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/01_build.jpg" alt="Build stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">01 &middot; Build</span>
+          <span class="sn"><em>01</em> Build</span>
           <p>Script to timeline. Every chunk capped at nine seconds, because past that the lip sync drifts.</p>
         </figcaption>
       </figure>
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/02_generate.jpg" alt="Generate stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">02 &middot; Generate</span>
+          <span class="sn"><em>02</em> Generate</span>
           <p>Face, voice and motion generated in batches of twelve. kling3_0 and ElevenLabs.</p>
         </figcaption>
       </figure>
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/03_qc.jpg" alt="QC stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">03 &middot; QC</span><span class="loop">re-roll sends back to 02</span>
+          <span class="sn"><em>03</em> QC</span><span class="loop">re-roll sends back to 02</span>
           <p>Whisper transcribes the render and diffs it against the script. A changed meaning fails.</p>
         </figcaption>
       </figure>
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/04_compose.jpg" alt="Compose stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">04 &middot; Compose</span>
+          <span class="sn"><em>04</em> Compose</span>
           <p>Cuts, subtitles, title card, music. Overlays burn in here, so restyling costs no credits.</p>
         </figcaption>
       </figure>
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/05_approve.jpg" alt="Approve stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">05 &middot; Approve</span>
+          <span class="sn"><em>05</em> Approve</span>
           <p>One preview to Telegram. No reply inside the hour and the batch carries on without me.</p>
         </figcaption>
       </figure>
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/06_publish.jpg" alt="Publish stage of the pipeline" loading="lazy"></div>
         <figcaption>
-          <span class="sn">06 &middot; Publish</span>
+          <span class="sn"><em>06</em> Publish</span>
           <p>Queued through the Meta Graph API with scheduled publish times. The laptop can be off.</p>
         </figcaption>
       </figure>
