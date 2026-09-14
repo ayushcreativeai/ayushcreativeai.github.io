@@ -1,28 +1,29 @@
 <title>Ayush Sharma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AI creative strategist. Direct-response ads from angle to finished asset, and the systems that ship them.">
 
 <style>
   :root{
-    --paper:#F4F3F0;
-    --paper-2:#ECEAE5;
-    --ink:#121316;
-    --ink-2:#54565D;
-    --ink-3:#6E7076;
-    --line:#DCDAD4;
-    --line-2:#C9C6BE;
-    --accent:#D7301F;
+    --paper:#ECF0F1;
+    --paper-2:#DDE3E5;
+    --ink:#2C3E50;
+    --ink-2:#34495E;
+    --ink-3:#6B7B84;
+    --line:#BDC3C7;
+    --line-2:#A9B2B6;
+    --accent:#34495E;
+    --mark:#7F8C8D;
     --ease:cubic-bezier(.32,.72,0,1);
-    --hair:rgba(18,19,22,.07);
-    --hair-2:rgba(18,19,22,.12);
-    --shell:rgba(18,19,22,.035);
-    --amb:0 28px 56px -30px rgba(18,19,22,.22), 0 4px 14px -8px rgba(18,19,22,.10);
-    --amb-hi:0 40px 72px -32px rgba(18,19,22,.28), 0 6px 18px -8px rgba(18,19,22,.12);
-    --sans:"Geist",system-ui,-apple-system,sans-serif;
-    --mono:"Geist Mono",ui-monospace,monospace;
+    --hair:rgba(44,62,80,.12);
+    --hair-2:rgba(44,62,80,.20);
+    --shell:rgba(44,62,80,.05);
+    --amb:0 28px 56px -30px rgba(44,62,80,.26), 0 4px 14px -8px rgba(44,62,80,.12);
+    --amb-hi:0 40px 72px -32px rgba(44,62,80,.32), 0 6px 18px -8px rgba(44,62,80,.14);
+    --sans:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -53,15 +54,15 @@
   .island{
     pointer-events:auto;display:flex;align-items:center;gap:26px;width:max-content;max-width:100%;
     padding:11px 12px 11px 22px;border-radius:999px;
-    background:rgba(248,247,245,.72);backdrop-filter:blur(22px) saturate(1.5);
-    box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 18px 40px -22px rgba(18,19,22,.26), 0 0 0 1px var(--hair);
+    background:rgba(236,240,241,.74);backdrop-filter:blur(22px) saturate(1.5);
+    box-shadow:0 1px 0 rgba(255,255,255,.85) inset, 0 18px 40px -22px rgba(44,62,80,.28), 0 0 0 1px var(--hair);
   }
   nav b{font-weight:800;letter-spacing:-.02em;font-size:16px}
   .avail{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
   nav .mail{
     font-family:var(--mono);font-size:11.5px;display:flex;align-items:center;gap:9px;
-    padding:8px 8px 8px 16px;border-radius:999px;background:var(--ink);color:#F7F6F4;
+    padding:8px 8px 8px 16px;border-radius:999px;background:var(--ink);color:#ECF0F1;
     transition:transform .5s var(--ease);
   }
   nav .mail:hover{transform:translateY(-1px)}
@@ -117,17 +118,17 @@
     box-shadow:0 1px 0 rgba(255,255,255,.8) inset, var(--amb), 0 0 0 1px var(--hair);
     transition:transform .6s var(--ease),box-shadow .6s var(--ease);
   }
-  .card:hover .vidwrap{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, var(--amb-hi), 0 0 0 1px var(--hair-2)}
+  .card:hover .vidwrap{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb-hi), 0 0 0 1px var(--hair-2)}
   .vidwrap video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:19px;display:block}
   .tag{
     position:absolute;top:19px;left:19px;z-index:2;
     font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
-    background:rgba(18,19,22,.72);color:#fff;padding:7px 11px;border-radius:6px;backdrop-filter:blur(6px);
+    background:rgba(44,62,80,.80);color:#fff;padding:7px 11px;border-radius:6px;backdrop-filter:blur(6px);
   }
   .snd{
     position:absolute;bottom:19px;right:19px;z-index:2;border:0;cursor:pointer;
     font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
-    background:rgba(18,19,22,.72);color:#fff;padding:8px 12px;border-radius:6px;backdrop-filter:blur(6px);
+    background:rgba(44,62,80,.80);color:#fff;padding:8px 12px;border-radius:6px;backdrop-filter:blur(6px);
     transition:background .2s var(--ease),transform .12s var(--ease);
   }
   .snd:hover{background:var(--accent)}
@@ -144,16 +145,22 @@
 
   /* statics */
   .statics{padding-block:148px;border-top:1px solid var(--hair)}
-  .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:26px;margin-top:44px}
+  .sgrid{
+    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:44px;
+  }
+  @media(max-width:1020px){
+    .sgrid{display:flex;overflow-x:auto;gap:14px;padding-bottom:18px;scroll-snap-type:x proximity}
+    .sgrid figure{flex:0 0 210px;scroll-snap-align:start}
+  }
   .sgrid figure{
-    margin:0;padding:7px;border-radius:22px;background:var(--shell);
+    margin:0;padding:5px;border-radius:16px;background:var(--shell);
     box-shadow:0 1px 0 rgba(255,255,255,.8) inset, var(--amb), 0 0 0 1px var(--hair);
     transition:transform .6s var(--ease),box-shadow .6s var(--ease);
   }
-  .sgrid figure:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, var(--amb-hi), 0 0 0 1px var(--hair-2)}
-  .sgrid img{aspect-ratio:4/5;object-fit:cover;border-radius:15px}
-  .sgrid figcaption{margin:14px 8px 6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
-  .sgrid b{display:block;font-family:var(--sans);font-size:15px;letter-spacing:-.01em;color:var(--ink);text-transform:none;font-weight:600;margin-bottom:5px}
+  .sgrid figure:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb-hi), 0 0 0 1px var(--hair-2)}
+  .sgrid img{aspect-ratio:4/5;object-fit:cover;border-radius:12px}
+  .sgrid figcaption{margin:11px 5px 4px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);line-height:1.45}
+  .sgrid b{display:block;font-family:var(--sans);font-size:13px;letter-spacing:-.01em;color:var(--ink);text-transform:none;font-weight:600;margin-bottom:5px}
 
   h3.big{font-size:clamp(28px,4vw,50px);line-height:1.02;letter-spacing:-.038em;font-weight:800;margin:14px 0 0;max-width:20ch;text-wrap:balance}
   .lede{color:var(--ink-2);margin:20px 0 0;max-width:56ch;font-size:18px}
@@ -204,7 +211,7 @@
   }
   .mapinner{background:var(--paper);border-radius:22px;padding:30px 26px;overflow-x:auto;box-shadow:0 0 0 1px var(--hair)}
   .mapwrap svg{width:100%;min-width:820px;height:auto;display:block}
-  .mp-box{fill:#F4F3F0;stroke:#C9C6BE;stroke-width:1.2}
+  .mp-box{fill:#ECF0F1;stroke:#A9B2B6;stroke-width:1.2}
   .mp-t{font-family:var(--sans);font-size:15px;font-weight:700;fill:#121316;letter-spacing:-.01em}
   .mp-d{font-family:var(--mono);font-size:11px;fill:#6E7076}
   .mp-n{font-family:var(--mono);font-size:10.5px;font-weight:600;fill:#D7301F;letter-spacing:.1em}
@@ -224,7 +231,7 @@
     box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 0 0 1px var(--hair);
     transition:transform .6s var(--ease),box-shadow .6s var(--ease);
   }
-  .hcard:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, var(--amb), 0 0 0 1px var(--hair-2)}
+  .hcard:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb), 0 0 0 1px var(--hair-2)}
   .hcard svg{color:var(--accent)}
   .hcard h4{margin:16px 0 8px;font-size:16px;font-weight:700;letter-spacing:-.015em}
   .hcard p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
@@ -249,9 +256,9 @@
     position:absolute;display:block;border-radius:50%;
     filter:blur(80px);opacity:.72;will-change:transform;
   }
-  #amb .a{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,rgba(215,48,31,.10),transparent 68%);animation:drift1 92s var(--ease) infinite alternate}
-  #amb .b{width:46vw;height:46vw;right:-10vw;top:26vh;background:radial-gradient(circle,rgba(74,142,192,.13),transparent 68%);animation:drift2 118s var(--ease) infinite alternate}
-  #amb .c{width:40vw;height:40vw;left:24vw;bottom:-16vw;background:radial-gradient(circle,rgba(18,19,22,.07),transparent 70%);animation:drift3 104s var(--ease) infinite alternate}
+  #amb .a{width:52vw;height:52vw;left:-12vw;top:-14vw;background:radial-gradient(circle,rgba(52,73,94,.16),transparent 68%);animation:drift1 92s var(--ease) infinite alternate}
+  #amb .b{width:46vw;height:46vw;right:-10vw;top:26vh;background:radial-gradient(circle,rgba(127,140,141,.20),transparent 68%);animation:drift2 118s var(--ease) infinite alternate}
+  #amb .c{width:40vw;height:40vw;left:24vw;bottom:-16vw;background:radial-gradient(circle,rgba(44,62,80,.12),transparent 70%);animation:drift3 104s var(--ease) infinite alternate}
   #grain{
     position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
@@ -290,7 +297,7 @@
     box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 0 0 1px var(--hair);
     transition:transform .6s var(--ease),box-shadow .6s var(--ease);
   }
-  .stage:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset, var(--amb), 0 0 0 1px var(--hair-2)}
+  .stage:hover{transform:translateY(-5px);box-shadow:0 1px 0 rgba(255,255,255,.85) inset, var(--amb), 0 0 0 1px var(--hair-2)}
   .shot{border-radius:16px;overflow:hidden;background:var(--paper)}
   .shot img{width:100%;aspect-ratio:8/5;object-fit:cover;display:block}
   .stage figcaption{padding:16px 12px 10px}
@@ -305,7 +312,7 @@
   /* drifting production grid, under everything */
   #grid{
     position:fixed;inset:-20% -20% -20% -20%;z-index:0;pointer-events:none;opacity:.5;
-    background-image:radial-gradient(circle at 1px 1px, rgba(18,19,22,.13) 1px, transparent 0);
+    background-image:radial-gradient(circle at 1px 1px, rgba(44,62,80,.16) 1px, transparent 0);
     background-size:34px 34px;
     animation:gridDrift 64s linear infinite;
     -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 42%, #000 20%, transparent 78%);
@@ -323,7 +330,7 @@
     display:inline-flex;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.2em;
     text-transform:uppercase;color:var(--accent);
   }
-  .beat.flip .bl{color:#FF7A66}
+  .beat.flip .bl{color:#BDC3C7}
   .bq{
     margin:20px 0 0;font-size:clamp(26px,3.5vw,42px);line-height:1.12;letter-spacing:-.035em;
     font-weight:800;max-width:22ch;text-wrap:balance;
@@ -335,6 +342,37 @@
   .bnums b{display:block;font-size:52px;font-weight:900;letter-spacing:-.045em;line-height:1;font-variant-numeric:tabular-nums}
   .bnums span{display:block;margin-top:12px;font-size:15px;color:var(--ink-2);line-height:1.5}
   @media(max-width:700px){.beat{padding:28px 24px}}
+
+
+  .role{
+    margin:26px 0 0;font-size:clamp(19px,2.5vw,30px);font-weight:600;letter-spacing:-.02em;
+    color:var(--ink);line-height:1.25;max-width:24ch;
+  }
+  .sub{margin-top:18px}
+
+  /* numbers that grab */
+  .n,.metric .v,.bnums b,.specs .n{position:relative;display:inline-block}
+  .n::after,.metric .v::after,.bnums b::after{
+    content:"";position:absolute;left:-4px;right:-4px;bottom:.07em;height:.34em;
+    background:var(--mark);opacity:.34;z-index:-1;border-radius:2px;
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform .85s var(--ease) .15s;
+  }
+  .in .n::after,.in.metric .v::after,.in .bnums b::after,.rv.in .n::after{transform:scaleX(1)}
+  .bnums b{font-size:clamp(38px,4.4vw,58px)}
+  .metric .v{color:var(--ink)}
+
+  .tri{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .tri>div{
+    padding:26px 24px;border-radius:20px;background:var(--shell);
+    box-shadow:0 1px 0 rgba(255,255,255,.85) inset, 0 0 0 1px var(--hair);
+  }
+  .tri p{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+  .tri b{color:var(--ink);font-weight:600}
+  @media(max-width:900px){.tri{grid-template-columns:1fr}}
+
+  /* canvas motion graphics */
+  #mg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9}
 
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
@@ -366,6 +404,7 @@
 <symbol id="ic-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 10-10a2.1 2.1 0 0 0-3-3L5 16z"/><line x1="14" y1="7" x2="17" y2="10"/></symbol>
 </svg>
 
+<canvas id="mg" aria-hidden="true"></canvas>
 <div id="amb" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
 <div id="grid" aria-hidden="true"></div>
 <div id="grain" aria-hidden="true"></div>
@@ -386,15 +425,15 @@
 <div class="wrap">
 
   <header>
-    <div class="mono rv">AI creative strategist &mdash; performance creative</div>
     <h1 class="rv">I make the ads. And the <span class="q">machine</span> that makes the ads.</h1>
+    <p class="role rv">AI Creative Strategist, Producer &amp; Performance Creative</p>
     <p class="sub rv">Direct response for Meta, from angle to finished asset. Medical aesthetics, US home services, fintech. No handoff, no brief thrown over a wall.</p>
 
     <div class="proof rv">
-      <div><div class="n">9.8%</div><div class="k">CTR &mdash; BlueMagic</div></div>
-      <div><div class="n">7.0%</div><div class="k">CTR &mdash; Apex Ops</div></div>
-      <div><div class="n">35</div><div class="k">AI videos shipped</div></div>
-      <div><div class="n">5M+</div><div class="k">Views built from zero</div></div>
+      <div><div class="n" data-num="9.8%">9.8%</div><div class="k">CTR &mdash; BlueMagic</div></div>
+      <div><div class="n" data-num="7.0%">7.0%</div><div class="k">CTR &mdash; Apex Ops</div></div>
+      <div><div class="n" data-num="35">35</div><div class="k">AI videos shipped</div></div>
+      <div><div class="n" data-num="5M+">5M+</div><div class="k">Views built from zero</div></div>
     </div>
     <p class="note rv">Client-reported, specific campaigns. Full data on request.</p>
   </header>
@@ -585,25 +624,26 @@
     <h3 class="big rv">So I stopped making videos, and built the line that makes them.</h3>
 
 
-    <div class="beat rv">
-      <span class="bl">The problem</span>
-      <p class="bq">Thirty five videos. A day of work in each. Five slots a week to fill.</p>
-      <p class="bp">Do that arithmetic and the posting schedule consumes the entire role, forever. Worse, rushing costs more than going slow: one drifted lip sync or one garbled word kills the chunk, and you pay to generate it a second time. Hand production does not scale here. It just gets more expensive.</p>
-    </div>
-
-    <div class="beat rv flip">
-      <span class="bl">The solution</span>
-      <p class="bq">So I stopped making videos, and built the line that makes them.</p>
-      <p class="bp">One command carries a script from plan to scheduled post. Every stage is resumable, so a crash costs minutes instead of a batch. A transcript gate catches wrong words before anyone watches a frame. The only human decision left is an approval, and it times out after an hour and continues without me.</p>
-    </div>
-
-    <div class="beat rv">
-      <span class="bl">What that bought</span>
-      <div class="bnums">
-        <div><b>35</b><span>delivered end to end, not 15 and a backlog</span></div>
-        <div><b>0</b><span>credits to restyle all 14 title cards, because the pipeline keeps its parts</span></div>
-        <div><b>386</b><span>credits saved by proving a timed-out job had already been charged</span></div>
+    <div class="tri">
+      <div class="rv">
+        <span class="bl">The problem</span>
+        <p>Thirty five videos, a day of work in each, five slots a week to fill. Hand production does not scale here. It just gets more expensive every week.</p>
       </div>
+      <div class="rv">
+        <span class="bl">What I did first</span>
+        <p>A full content audit before a single frame was made. I scored <b>182 of the account's own reels</b> by reach and posting hour, so the line was built around what already worked instead of guesses.</p>
+      </div>
+      <div class="rv">
+        <span class="bl">The solution</span>
+        <p>One command carries a script to a scheduled post. Resumable at every stage, gated by a transcript check, and the last human decision times out after an hour.</p>
+      </div>
+    </div>
+
+    <div class="bnums rv">
+      <div><b data-num="35">35</b><span>delivered end to end</span></div>
+      <div><b data-num="182">182</b><span>reels audited first</span></div>
+      <div><b data-num="0">0</b><span>credits to restyle 14 title cards</span></div>
+      <div><b data-num="386">386</b><span>credits saved on one recovered batch</span></div>
     </div>
 
     <div class="prail">
@@ -797,6 +837,77 @@
     });
   }, {rootMargin:'-25% 0px -25% 0px', threshold:0});
   vids.forEach(function(v){ vo.observe(v); });
+
+
+  // motion graphics: slow signal field
+  (function(){
+    var cv = document.getElementById('mg');
+    if (!cv || reduce) return;
+    var ctx = cv.getContext('2d'), w = 0, h = 0, dpr = Math.min(devicePixelRatio || 1, 2);
+    function size(){
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    addEventListener('resize', size); size();
+    var LINES = [
+      {amp:44, len:0.0022, sp:0.00022, y:0.24, c:'44,62,80',  a:0.16, lw:1.4},
+      {amp:64, len:0.0016, sp:0.00016, y:0.42, c:'52,73,94',  a:0.13, lw:1.6},
+      {amp:38, len:0.0029, sp:0.00030, y:0.58, c:'127,140,141',a:0.20, lw:1.2},
+      {amp:80, len:0.0012, sp:0.00012, y:0.74, c:'44,62,80',  a:0.10, lw:1.8},
+      {amp:30, len:0.0035, sp:0.00026, y:0.88, c:'127,140,141',a:0.16, lw:1.1}
+    ];
+    var t = 0, raf = null;
+    function frame(now){
+      t = now || 0;
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < LINES.length; i++){
+        var L = LINES[i];
+        ctx.beginPath();
+        for (var x = 0; x <= w; x += 8){
+          var y = L.y * h
+                + Math.sin(x * L.len + t * L.sp) * L.amp
+                + Math.sin(x * L.len * 2.3 + t * L.sp * 1.7) * (L.amp * 0.34);
+          if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = 'rgba(' + L.c + ',' + L.a + ')';
+        ctx.lineWidth = L.lw;
+        ctx.stroke();
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){ if (!raf) raf = requestAnimationFrame(frame); }
+    function stop(){ if (raf) { cancelAnimationFrame(raf); raf = null; } }
+    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+    start();
+  })();
+
+  // count up the figures once they land
+  (function(){
+    var nums = document.querySelectorAll('[data-num]');
+    if (!nums.length) return;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var no = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        no.unobserve(e.target);
+        var el = e.target, raw = el.dataset.num;
+        var m = raw.match(/^([0-9.]+)(.*)$/);
+        if (!m) return;
+        var end = parseFloat(m[1]), suffix = m[2] || '', dec = (m[1].split('.')[1] || '').length;
+        var t0 = null, dur = 900;
+        function tick(ts){
+          if (!t0) t0 = ts;
+          var k = Math.min((ts - t0) / dur, 1);
+          var eased = 1 - Math.pow(1 - k, 3);
+          el.textContent = (end * eased).toFixed(dec) + suffix;
+          if (k < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, {threshold:0.6});
+    nums.forEach(function(n){ no.observe(n); });
+  })();
 
   document.querySelectorAll('.snd').forEach(function(btn){
     btn.addEventListener('click', function(){
