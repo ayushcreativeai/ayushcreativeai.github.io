@@ -909,15 +909,22 @@
         var m = raw.match(/^([0-9.]+)(.*)$/);
         if (!m) return;
         var end = parseFloat(m[1]), suffix = m[2] || '', dec = (m[1].split('.')[1] || '').length;
-        var t0 = null, dur = 900;
+        var t0 = null, dur = 900, done = false;
+        function finish(){ if (!done) { done = true; el.textContent = raw; } }
+        // never leave a figure showing a partial value: rAF stalls in a hidden
+        // tab, and a wrong metric on screen is worse than no animation.
+        if (document.hidden) { finish(); return; }
         function tick(ts){
+          if (done) return;
           if (!t0) t0 = ts;
           var k = Math.min((ts - t0) / dur, 1);
-          var eased = 1 - Math.pow(1 - k, 3);
-          el.textContent = (end * eased).toFixed(dec) + suffix;
-          if (k < 1) requestAnimationFrame(tick);
+          if (k >= 1) { finish(); return; }
+          el.textContent = (end * (1 - Math.pow(1 - k, 3))).toFixed(dec) + suffix;
+          requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
+        setTimeout(finish, dur + 500);
+        document.addEventListener('visibilitychange', function(){ if (document.hidden) finish(); });
       });
     }, {threshold:0.6});
     nums.forEach(function(n){ no.observe(n); });
