@@ -833,7 +833,7 @@
       cv.width = w * dpr; cv.height = h * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
-    addEventListener('resize', size); size();
+    addEventListener('resize', function(){ size(); draw(t); }); size();
     var LINES = [
       {amp:44, len:0.0022, sp:0.00022, y:0.24, c:'44,62,80',  a:0.16, lw:1.4},
       {amp:64, len:0.0016, sp:0.00016, y:0.42, c:'52,73,94',  a:0.13, lw:1.6},
@@ -842,7 +842,7 @@
       {amp:30, len:0.0035, sp:0.00026, y:0.88, c:'127,140,141',a:0.16, lw:1.1}
     ];
     var t = 0, raf = null;
-    function frame(now){
+    function draw(now){
       t = now || 0;
       ctx.clearRect(0, 0, w, h);
       for (var i = 0; i < LINES.length; i++){
@@ -858,11 +858,12 @@
         ctx.lineWidth = L.lw;
         ctx.stroke();
       }
-      raf = requestAnimationFrame(frame);
     }
+    function frame(now){ draw(now); raf = requestAnimationFrame(frame); }
     function start(){ if (!raf) raf = requestAnimationFrame(frame); }
     function stop(){ if (raf) { cancelAnimationFrame(raf); raf = null; } }
     document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+    draw(0);
     start();
   })();
 
