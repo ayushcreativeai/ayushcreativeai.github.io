@@ -11,7 +11,7 @@
     --paper-2:#DDE3E5;
     --ink:#2C3E50;
     --ink-2:#34495E;
-    --ink-3:#6B7B84;
+    --ink-3:#5A6A72;
     --line:#BDC3C7;
     --line-2:#A9B2B6;
     --accent:#E67E22;
@@ -41,10 +41,11 @@
   .wrap{max-width:1340px;margin:0 auto;padding-inline:28px}
 
   .mono{
-    display:inline-flex;align-items:center;font-family:var(--mono);font-size:10px;font-weight:500;
-    letter-spacing:.2em;text-transform:uppercase;
-    padding:6px 13px;border-radius:999px;background:rgba(230,126,34,.10);
-    box-shadow:0 0 0 1px rgba(230,126,34,.24);color:var(--accent-ink);
+    display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10.5px;font-weight:500;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2);
+  }
+  .mono::before{
+    content:"";flex:0 0 auto;width:28px;height:2px;background:var(--accent);border-radius:2px;
   }
 
   /* progress */
@@ -91,7 +92,7 @@
   .proof div{padding:26px 0 24px;border-right:1px solid var(--hair)}
   .proof div:last-child{border-right:0}
   .proof .n{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
-  .proof .k{margin-top:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+  .proof .k{margin-top:14px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
   .note{margin:16px 0 0;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
   @media(max-width:720px){.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
 
@@ -336,8 +337,8 @@
   /* numbers that grab */
   .n,.metric .v,.bnums b,.specs .n{position:relative;display:inline-block}
   .n::after,.metric .v::after,.bnums b::after{
-    content:"";position:absolute;left:-4px;right:-4px;bottom:.07em;height:.34em;
-    background:var(--mark);opacity:.42;z-index:-1;border-radius:2px;
+    content:"";position:absolute;left:-5px;right:-5px;bottom:.13em;height:.30em;
+    background:var(--mark);opacity:.46;z-index:-1;border-radius:2px;
     transform:scaleX(0);transform-origin:left center;
     transition:transform .85s var(--ease) .15s;
   }
@@ -451,6 +452,16 @@
         </div>
         <p class="hook">&ldquo;Roofer, ADU builder, renovator, general contractor.&rdquo;</p>
         <p class="why">ADU is a California permit class. A contractor hears it and knows someone did the homework.</p>
+      </div>
+
+      <div class="card rv">
+        <div class="vidwrap">
+          <span class="tag">Outcome stack</span>
+          <video src="vid/ax_third.mp4" poster="img/ax_third.jpg" muted loop playsinline preload="none"></video>
+          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
+        </div>
+        <p class="hook">&ldquo;More homeowner inquiries, more appointments, more jobs closed.&rdquo;</p>
+        <p class="why">Third cut of the proven script. The variable is delivery and setting, never the angle.</p>
       </div>
     </div>
   </section>
@@ -626,7 +637,7 @@
     <div class="bnums rv">
       <div><b data-num="35">35</b><span>delivered end to end</span></div>
       <div><b data-num="182">182</b><span>reels audited first</span></div>
-      <div><b data-num="0">0</b><span>credits to restyle 14 title cards</span></div>
+      <div><b data-num="4">4</b><span>post steps automated. Cuts, subtitles, title card and music, with no manual effort</span></div>
       <div><b data-num="386">386</b><span>credits saved on one recovered batch</span></div>
     </div>
 
