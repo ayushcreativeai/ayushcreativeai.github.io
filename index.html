@@ -77,7 +77,7 @@
     @media(max-width:720px){nav .mail{display:none}}
 
   /* hero */
-  header{padding-block:132px 96px}
+  header{padding-block:104px 72px}
   h1{
     font-size:clamp(44px,7.4vw,104px);line-height:.96;letter-spacing:-.042em;
     font-weight:900;margin:0;max-width:16ch;text-wrap:balance;
@@ -86,7 +86,7 @@
   .sub{margin:34px 0 0;font-size:clamp(18px,2vw,22px);color:var(--ink-2);max-width:46ch;line-height:1.45}
 
   /* proof */
-  .proof{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:72px}
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-top:52px}
   .proof div{padding:26px 0 24px;border-right:1px solid var(--hair)}
   .proof div:last-child{border-right:0}
   .proof .n{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-.035em;line-height:1;font-variant-numeric:tabular-nums}
@@ -151,9 +151,9 @@
   }
 
   /* statics */
-  .statics{padding-block:148px;border-top:1px solid var(--hair)}
+  .statics{padding-block:96px;border-top:1px solid var(--hair)}
   .sgrid{
-    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:44px;
+    display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:30px;
   }
   @media(max-width:1020px){
     .sgrid{display:flex;overflow-x:auto;gap:14px;padding-bottom:18px;scroll-snap-type:x proximity}
@@ -564,7 +564,7 @@
 
   .system.dark{
     background:var(--ink);color:var(--paper);
-    border-radius:34px;padding:62px 46px 56px;margin-top:64px;
+    border-radius:34px;padding:52px 46px 48px;margin-top:56px;
     box-shadow:0 40px 90px -50px rgba(44,62,80,.7);
   }
   .system.dark .mono{color:rgba(236,240,241,.62)}
@@ -675,6 +675,19 @@
   .runner .navs button:hover{background:var(--accent);color:#fff}
   .runner .navs button:active{transform:scale(.92)}
   .proof .n em,.n em{font-style:normal;font-size:.62em;color:var(--accent-deep);margin-left:1px}
+
+
+  footer.close{padding-block:64px 88px;border-top:1px solid var(--hair);margin-top:56px}
+  .closegrid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;margin-top:46px;align-items:start}
+  .obullets{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+  .obullets li{display:flex;gap:12px;font-size:15px;color:var(--ink-2);line-height:1.5}
+  .obullets li svg{color:var(--accent-deep);margin-top:3px}
+  .obullets b{color:var(--ink);font-weight:600}
+  .reach .mono{margin-bottom:6px}
+  .reach .big-mail{font-size:clamp(22px,3.4vw,40px);margin-top:14px}
+  .reach .fmeta{margin-top:30px}
+  footer.close .disc{margin-top:46px}
+  @media(max-width:860px){.closegrid{grid-template-columns:1fr;gap:38px}}
 
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
@@ -1129,100 +1142,37 @@
   </section>
 
 
-  <section class="stack">
-    <div class="mono rv">What I work in</div>
-    <h3 class="big rv">The stack, and what each part is for.</h3>
-
+  <footer class="close">
     <div class="mq rv" aria-label="Tools I work in">
       <div class="mqrow">
-        <div class="mqset"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="OpenAI Codex" loading="lazy"><i>OpenAI Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
-        <div class="mqset" aria-hidden="true"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="OpenAI Codex" loading="lazy"><i>OpenAI Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
+        <div class="mqset"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="Codex" loading="lazy"><i>Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
+        <div class="mqset" aria-hidden="true"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="Codex" loading="lazy"><i>Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
       </div>
     </div>
 
-    <div class="sgroups">
-      <div class="sgroup rv">
-        <h4><svg class="ic"><use href="#ic-play"/></svg> Generation</h4>
-        <ul>
-          <li><svg class="ic sm"><use href="#ic-play"/></svg> Higgsfield, kling3_0</li>
-          <li><svg class="ic sm"><use href="#ic-image"/></svg> HeyGen, digital presenters</li>
-          <li><svg class="ic sm"><use href="#ic-mic"/></svg> ElevenLabs, voice direction</li>
+    <div class="closegrid">
+      <div class="offer rv">
+        <div class="mono">What you are buying</div>
+        <ul class="obullets">
+          <li><svg class="ic sm"><use href="#ic-clock"/></svg><b>The shoot comes out of the budget.</b> Ten minutes of phone footage became four ads that beat the filmed control.</li>
+          <li><svg class="ic sm"><use href="#ic-layers"/></svg><b>Four angles a week per account</b>, produced and shipped, not briefed out and waited on.</li>
+          <li><svg class="ic sm"><use href="#ic-shield"/></svg><b>Platform policy read at scripting</b>, so restricted verticals clear review without a reshoot.</li>
+          <li><svg class="ic sm"><use href="#ic-terminal"/></svg><b>The pipeline comes with me.</b> Agents, QC gates and scheduled publishing, already written.</li>
         </ul>
       </div>
-      <div class="sgroup rv">
-        <h4><svg class="ic"><use href="#ic-flow"/></svg> Automation</h4>
-        <ul>
-          <li><svg class="ic sm"><use href="#ic-terminal"/></svg> Claude Code, Codex</li>
-          <li><svg class="ic sm"><use href="#ic-flow"/></svg> n8n, Make.com</li>
-          <li><svg class="ic sm"><use href="#ic-cpu"/></svg> Python, custom agent skills</li>
-        </ul>
-      </div>
-      <div class="sgroup rv">
-        <h4><svg class="ic"><use href="#ic-target"/></svg> Strategy</h4>
-        <ul>
-          <li><svg class="ic sm"><use href="#ic-pen"/></svg> Hooks, angles, awareness levels</li>
-          <li><svg class="ic sm"><use href="#ic-target"/></svg> Offer and objection mapping</li>
-          <li><svg class="ic sm"><use href="#ic-shield"/></svg> Platform policy, read at scripting</li>
-        </ul>
-      </div>
-      <div class="sgroup rv">
-        <h4><svg class="ic"><use href="#ic-chart"/></svg> Distribution</h4>
-        <ul>
-          <li><svg class="ic sm"><use href="#ic-chart"/></svg> Meta Ads Manager, CTR and CPL</li>
-          <li><svg class="ic sm"><use href="#ic-send"/></svg> Meta Graph API, scheduled publishing</li>
-          <li><svg class="ic sm"><use href="#ic-cloud"/></svg> rclone, Drive delivery</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
-
-  <section class="hire">
-    <div class="mono rv">For hiring managers</div>
-    <h3 class="big rv">What you are actually buying.</h3>
-
-    <div class="hgrid">
-      <div class="hcard rv accentcard">
-        <svg class="ic"><use href="#ic-clock"/></svg>
-        <h4>Cost I take out</h4>
-        <p>A shoot day, a crew and a studio become two phone clips and a prompt. <mark class="imp">Ten minutes of footage became four ads that beat the filmed ones.</mark></p>
-      </div>
-      <div class="hcard rv">
-        <svg class="ic"><use href="#ic-target"/></svg>
-        <h4>Roles I fit</h4>
-        <p>AI Creative Strategist, Performance Creative, AI Producer, Growth Creative. Agency or in-house.</p>
-      </div>
-      <div class="hcard rv">
-        <svg class="ic"><use href="#ic-layers"/></svg>
-        <h4>Volume I hold</h4>
-        <p>Four distinct angles a week per account, produced and shipped, not briefed out and waited on.</p>
-      </div>
-      <div class="hcard rv">
-        <svg class="ic"><use href="#ic-shield"/></svg>
-        <h4>Risk I remove</h4>
-        <p>Platform policy read at the scripting pass. Restricted verticals are where most creative teams lose weeks.</p>
-      </div>
-      <div class="hcard rv">
-        <svg class="ic"><use href="#ic-clock"/></svg>
-        <h4>Week one</h4>
-        <p>Audit the account, name the angles nobody is testing, ship a batch against the current control.</p>
+      <div class="reach rv">
+        <div class="mono">Open to remote roles and retainers</div>
+        <a class="big-mail" href="mailto:ayushsharma.ut@gmail.com">ayushsharma.ut@gmail.com<span class="nub2"><svg class="ic"><use href="#ic-send"/></svg></span></a>
+        <div class="fmeta">
+          <span><a href="https://linkedin.com/in/ayushsharmaaa">LinkedIn</a></span>
+          <span><a href="https://t.me/ayushsharmatelegram">Telegram</a></span>
+          <span><a href="Ayush_Sharma_Resume.pdf" download>Resume, one page</a></span>
+        </div>
       </div>
     </div>
 
-    <a class="dl rv" href="Ayush_Sharma_Resume.pdf" download>
-      Download the one page resume
-      <span class="nub3"><svg class="ic" style="width:15px;height:15px"><use href="#ic-send"/></svg></span>
-    </a>
-  </section>
-
-  <footer>
-    <div class="mono rv">Open to remote roles and retainers</div>
-    <a class="big-mail rv" href="mailto:ayushsharma.ut@gmail.com">ayushsharma.ut@gmail.com<span class="nub2"><svg class="ic" style="width:44%;height:44%"><use href="#ic-send"/></svg></span></a>
-    <div class="fmeta rv">
-      <span><a href="https://linkedin.com/in/ayushsharmaaa">LinkedIn</a></span>
-      <span><a href="https://t.me/ayushsharmatelegram">Telegram</a></span>
-    </div>
-    <p class="disc rv">Click-through rates are client-reported for specific Meta campaigns and are not account averages or a forecast for any future campaign. Date ranges and spend available on request. Videos are compressed excerpts of delivered assets; client brands remain the property of their owners.</p>
+    <p class="disc rv">Performance figures are read from Meta Ads Manager for the campaigns shown and are not account averages or a forecast. Spend is indexed or redacted because it belongs to the client. Videos are compressed excerpts of delivered work; client brands remain the property of their owners.</p>
   </footer>
 
 </div>
