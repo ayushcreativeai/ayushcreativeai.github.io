@@ -421,14 +421,15 @@
   @media(max-width:1180px){.rail{display:none}}
 
 
-  .swap{grid-column:1/-1;display:grid;grid-template-columns:1fr auto 1fr;gap:34px;align-items:center;margin-top:56px}
+  .swap{grid-column:1/-1;min-width:0;display:grid;grid-template-columns:1fr auto 1fr;gap:34px;align-items:center;margin-top:56px}
   .swapside .mono{display:block;margin-bottom:14px}
   .rawpair{display:flex;gap:10px}
   .rawpair video,.rawpair img{
-    width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--shell);
-    box-shadow:0 0 0 1px var(--hair);
+    flex:1 1 0;min-width:0;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;
+    background:var(--shell);box-shadow:0 0 0 1px var(--hair);
   }
   .rawpair.three video,.rawpair.three img{border-radius:12px}
+  .swapside{min-width:0}
   .swapside p{margin:16px 0 0;font-size:15px;color:var(--ink-2);line-height:1.55}
   .swaparrow{color:var(--accent);display:flex;align-items:center;justify-content:center}
   .swaparrow svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -437,12 +438,12 @@
     .swaparrow{transform:rotate(90deg)}
   }
 
-  .costline{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:44px;padding-top:34px;border-top:1px solid var(--hair)}
+  .costline{grid-column:1/-1;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:44px;padding-top:34px;border-top:1px solid var(--hair)}
   .costline b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,62px);line-height:1;color:var(--ink)}
   .costline b em{font-style:normal;font-size:.6em;color:var(--accent-deep)}
   .costline span{display:block;margin-top:10px;font-size:14.5px;color:var(--ink-2);line-height:1.45}
 
-  .deep{grid-column:1/-1;margin-top:40px;border-top:1px solid var(--hair);padding-top:8px}
+  .deep{grid-column:1/-1;min-width:0;margin-top:40px;border-top:1px solid var(--hair);padding-top:8px}
   .deep summary{
     cursor:pointer;list-style:none;padding:16px 0;font-family:var(--mono);font-size:11px;
     letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);
