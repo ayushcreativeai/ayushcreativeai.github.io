@@ -501,6 +501,36 @@
     .bar i{grid-column:1/-1;order:3}
   }
 
+
+  /* the line, running */
+  .prail{position:relative}
+  .stage{position:relative}
+  .stage::after{
+    content:"";position:absolute;inset:0;border-radius:24px;pointer-events:none;
+    box-shadow:0 0 0 2px var(--accent);opacity:0;
+    transition:opacity .45s var(--ease);
+  }
+  .stage.live::after{opacity:1}
+  .stage.live{transform:translateY(-6px)}
+  .stage .loop{opacity:.45;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+  .stage.reject .loop{opacity:1;transform:scale(1.06)}
+  .stage.reject::after{box-shadow:0 0 0 2px var(--accent-deep)}
+  .runner{
+    display:flex;align-items:center;gap:12px;margin:0 0 6px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+  }
+  .runner button{
+    border:0;background:none;padding:0;cursor:pointer;color:var(--accent-ink);
+    font:inherit;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .runner button:hover{color:var(--accent-deep)}
+  .runner .dots{display:flex;gap:5px}
+  .runner .dots i{width:6px;height:6px;border-radius:50%;background:var(--line-2);transition:background .35s var(--ease),transform .35s var(--ease)}
+  .runner .dots i.on{background:var(--accent);transform:scale(1.35)}
+  @media(prefers-reduced-motion:reduce){
+    .stage.live{transform:none}
+  }
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
     transition:opacity .88s var(--ease),transform .88s var(--ease),filter .88s var(--ease)}
@@ -895,6 +925,11 @@
       <div><b data-num="386">386</b><span>credits saved on one recovered batch</span></div>
     </div>
 
+    <div class="runner rv">
+      <span>One command, running</span>
+      <span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <button type="button" id="runToggle" aria-pressed="true">Pause</button>
+    </div>
     <div class="prail">
       <figure class="stage rv">
         <div class="shot"><img src="img/pipe/01_build.jpg" alt="Build stage of the pipeline" loading="lazy"></div>
@@ -1183,6 +1218,63 @@
       });
     }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
     secs.forEach(function(sec){ if (sec) ro.observe(sec); });
+  })();
+
+
+  // walk the pipeline so the gate is visible: 03 can send work back to 02
+  (function(){
+    var rail = document.querySelector('.prail');
+    if (!rail) return;
+    var stages = [].slice.call(rail.querySelectorAll('.stage'));
+    var dots = [].slice.call(document.querySelectorAll('.runner .dots i'));
+    var btn = document.getElementById('runToggle');
+    if (!stages.length) return;
+
+    var i = 0, rejectNext = false, timer = null, inView = false, paused = false;
+
+    function paint(idx, reject){
+      stages.forEach(function(el, n){
+        el.classList.toggle('live', n === idx);
+        el.classList.toggle('reject', !!reject && n === idx);
+      });
+      dots.forEach(function(d, n){ d.classList.toggle('on', n === idx); });
+      var el = stages[idx];
+      var target = el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2;
+      rail.scrollTo({left: Math.max(0, target), behavior: reduce ? 'auto' : 'smooth'});
+    }
+
+    function step(){
+      // QC sometimes fails and returns the chunk to generate
+      if (i === 2 && !rejectNext && Math.random() < 0.5) {
+        rejectNext = true;
+        paint(2, true);
+        timer = setTimeout(function(){ i = 1; rejectNext = false; paint(1, false); timer = setTimeout(step, 1500); }, 1400);
+        return;
+      }
+      paint(i, false);
+      i = (i + 1) % stages.length;
+      timer = setTimeout(step, 1700);
+    }
+
+    function start(){ if (!timer && inView && !paused && !reduce) { step(); } }
+    function stop(){ if (timer) { clearTimeout(timer); timer = null; } }
+
+    btn.addEventListener('click', function(){
+      paused = !paused;
+      btn.textContent = paused ? 'Play' : 'Pause';
+      btn.setAttribute('aria-pressed', String(!paused));
+      paused ? stop() : start();
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(es){
+        inView = es[0].isIntersecting;
+        inView ? start() : stop();
+      }, {threshold:0.25}).observe(rail);
+    } else { inView = true; start(); }
+
+    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+    if (reduce) { paint(0, false); btn.style.display = 'none'; }
   })();
 
   document.querySelectorAll('.snd').forEach(function(btn){
