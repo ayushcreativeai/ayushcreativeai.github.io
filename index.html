@@ -1266,14 +1266,24 @@
       paused ? stop() : start();
     });
 
+    function onScreen(){
+      var b = rail.getBoundingClientRect();
+      return b.top < innerHeight * 0.92 && b.bottom > innerHeight * 0.08;
+    }
+    function recheck(){
+      inView = onScreen();
+      inView && !document.hidden ? start() : stop();
+    }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function(es){
         inView = es[0].isIntersecting;
-        inView ? start() : stop();
+        inView && !document.hidden ? start() : stop();
       }, {threshold:0.25}).observe(rail);
-    } else { inView = true; start(); }
-
-    document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+    }
+    // the observer never fires in a hidden or prerendered tab, so check directly too
+    addEventListener('scroll', recheck, {passive:true});
+    document.addEventListener('visibilitychange', recheck);
+    recheck();
     if (reduce) { paint(0, false); btn.style.display = 'none'; }
   })();
 
