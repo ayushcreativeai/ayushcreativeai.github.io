@@ -541,16 +541,18 @@
   .tfm{display:block;margin-top:46px}
   .tside .mono{display:block;margin-bottom:14px}
   .tin{display:grid;gap:12px}
-  .tin.two{grid-template-columns:repeat(2,minmax(0,300px))}
-  .tin.three{grid-template-columns:repeat(3,minmax(0,300px))}
+  .tin.two{grid-template-columns:repeat(2,minmax(0,186px))}
+  .tin.three{grid-template-columns:repeat(3,minmax(0,306px))}
   .tin video,.tvid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:12px}
   .tin.two video{opacity:.9;filter:saturate(.8);box-shadow:0 0 0 1px var(--hair)}
   .tin figure{margin:0;min-width:0}
   .tvid{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--hair),var(--amb)}
   .tin figcaption{margin-top:12px;font-size:15px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
   .tnote{margin:16px 0 0;font-size:15px;color:var(--ink-3);line-height:1.5}
-  .tarrow{display:flex;align-items:center;gap:12px;margin:26px 0;color:var(--accent)}
-  .tarrow svg{width:26px;height:26px;transform:rotate(90deg);fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .tarrow{display:flex;align-items:center;gap:16px;margin:8px 0 18px;color:var(--accent);padding-left:14px}
+  .tarrow svg{width:190px;height:74px;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+  .tarrow .squiggle{stroke-width:2;stroke-dasharray:6 7;opacity:.85}
+  .tarrow .head{stroke-width:2.2}
   .tarrow span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
   .tfm .tag{top:13px;left:13px}
   .tfm .snd{bottom:13px;right:13px}
@@ -566,7 +568,7 @@
     box-shadow:0 40px 90px -50px rgba(44,62,80,.7);
   }
   .system.dark .mono{color:rgba(236,240,241,.62)}
-  .system.dark h3.big{color:var(--paper)}
+  .system.dark h3.big{color:var(--paper);margin-top:0}
   .system.dark .lede{color:rgba(236,240,241,.72)}
   .system.dark .bl{color:var(--paper)}
   .system.dark .tri>div{background:rgba(236,240,241,.06);border-left-color:var(--accent);box-shadow:none}
@@ -635,7 +637,7 @@
   .system.dark .achip{color:rgba(236,240,241,.8)}
   .system.dark .alab{color:rgba(236,240,241,.7)}
   .system.dark .runner{color:rgba(236,240,241,.7)}
-  .system.dark .mono{font-size:10.5px;letter-spacing:.16em}
+  .system.dark .mono{font-size:10.5px;letter-spacing:.18em;display:block;margin-bottom:26px}
   .system.dark .imp{background:rgba(230,126,34,.26);color:#fff;box-shadow:none}
 
 
@@ -661,6 +663,18 @@
   .dest{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;border-top:1px solid rgba(236,240,241,.14)}
   .dest img{height:17px;width:auto;opacity:.92}
   .dest i{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(236,240,241,.66);font-style:normal;margin-left:2px}
+
+
+  .runner .navs{display:flex;gap:6px;margin-left:4px}
+  .runner .navs button{
+    width:30px;height:30px;border-radius:50%;line-height:1;font-size:13px;
+    background:rgba(236,240,241,.1);color:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .3s var(--ease),transform .2s var(--ease);
+  }
+  .runner .navs button:hover{background:var(--accent);color:#fff}
+  .runner .navs button:active{transform:scale(.92)}
+  .proof .n em,.n em{font-style:normal;font-size:.62em;color:var(--accent-deep);margin-left:1px}
 
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
@@ -728,7 +742,7 @@
     <div class="proof rv">
       <div><div class="n" data-num="12.8%">12.8%</div><div class="k">CTR &mdash; BlueMagic top ad</div></div>
       <div><div class="n" data-num="35%">35%</div><div class="k">Lower cost per lead &mdash; Apex</div></div>
-      <div><div class="n" data-num="35">35</div><div class="k">AI videos shipped</div></div>
+      <div><div class="n" data-num="100">100<em>+</em></div><div class="k">AI videos shipped</div></div>
       <div><div class="n" data-num="5M+">5M+</div><div class="k">Views built from zero</div></div>
     </div>
     <p class="note rv">Taken from Meta Ads Manager. Campaign screenshots in each case study.</p>
@@ -754,7 +768,10 @@
       </div>
 
       <div class="tarrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M3 12h16"/><path d="M13 6l6 6-6 6"/></svg>
+        <svg viewBox="0 0 220 86" preserveAspectRatio="none">
+          <path class="squiggle" d="M6 12 C 52 12, 34 52, 86 54 S 150 30, 196 64"/>
+          <path class="head" d="M186 52 L199 66 L181 72"/>
+        </svg>
         <span>became</span>
       </div>
 
@@ -969,8 +986,8 @@
       <div class="mono rv">04 &middot; Meta &middot; Australia</div>
       <h2 class="rv brand"><img src="img/logo/techytantrums.png" alt="Techy Tantrums" style="max-height:40px"></h2>
       <p class="rv">My own agency. I am co-founder and creative chief, and I own the production standard on everything that ships.</p>
-      <p class="rv">One presenter who does not exist, held across three shoots, three wardrobes and three locations.</p>
-      <div class="metric rv"><span class="v">1</span><span class="l">face, three shoots</span></div>
+      <p class="rv"><mark class="imp">The presenter is my own avatar, built from me, by me</mark>, held across three wardrobes and three locations.</p>
+      <div class="metric rv"><span class="v">1</span><span class="l">avatar, three shoots</span></div>
     </div>
 
     <div class="reel">
@@ -1055,6 +1072,10 @@
     <div class="runner rv">
       <span>One command, running</span>
       <span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="navs">
+        <button type="button" id="railPrev" aria-label="Previous stage">&#8592;</button>
+        <button type="button" id="railNext" aria-label="Next stage">&#8594;</button>
+      </span>
       <button type="button" id="runToggle" aria-pressed="true">Pause</button>
     </div>
     <div class="prail">
@@ -1212,9 +1233,13 @@
   if (!reduce && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('js-anim');
   }
+  // failsafe: only rescue what is already on screen, so everything further
+  // down still animates in as you reach it
   setTimeout(function(){
-    document.querySelectorAll('.rv').forEach(function(e){ e.classList.add('in'); });
-  }, 3200);
+    document.querySelectorAll('.rv:not(.in)').forEach(function(e){
+      if (e.getBoundingClientRect().top < innerHeight) e.classList.add('in');
+    });
+  }, 2600);
 
   var bar = document.getElementById('bar');
   addEventListener('scroll', function(){
@@ -1353,71 +1378,42 @@
   })();
 
 
-  // walk the pipeline so the gate is visible: 03 can send work back to 02
+  // the line moves on its own, and can be driven by hand
   (function(){
     var rail = document.querySelector('.prail');
     if (!rail) return;
     var stages = [].slice.call(rail.querySelectorAll('.stage'));
     var dots = [].slice.call(document.querySelectorAll('.runner .dots i'));
     var btn = document.getElementById('runToggle');
+    var prev = document.getElementById('railPrev'), next = document.getElementById('railNext');
     if (!stages.length) return;
+    var i = 0, timer = null, paused = false;
 
-    var i = 0, rejectNext = false, timer = null, inView = false, paused = false;
-
-    function paint(idx, reject){
-      stages.forEach(function(el, n){
-        el.classList.toggle('live', n === idx);
-        el.classList.toggle('reject', !!reject && n === idx);
-      });
-      dots.forEach(function(d, n){ d.classList.toggle('on', n === idx); });
-      var el = stages[idx];
-      var target = el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2;
-      rail.scrollTo({left: Math.max(0, target), behavior: reduce ? 'auto' : 'smooth'});
+    function show(n, smooth){
+      i = (n + stages.length) % stages.length;
+      var el = stages[i];
+      rail.scrollTo({left: Math.max(0, el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2),
+                     behavior: (smooth && !reduce) ? 'smooth' : 'auto'});
+      stages.forEach(function(e, k){ e.classList.toggle('live', k === i); });
+      dots.forEach(function(d, k){ d.classList.toggle('on', k === i); });
     }
+    function tick(){ show(i + 1, true); schedule(); }
+    function schedule(){ clearTimeout(timer); if (!paused && !reduce) timer = setTimeout(tick, 3200); }
 
-    function step(){
-      // QC sometimes fails and returns the chunk to generate
-      if (i === 2 && !rejectNext && Math.random() < 0.5) {
-        rejectNext = true;
-        paint(2, true);
-        timer = setTimeout(function(){ i = 1; rejectNext = false; paint(1, false); timer = setTimeout(step, 1500); }, 1400);
-        return;
-      }
-      paint(i, false);
-      i = (i + 1) % stages.length;
-      timer = setTimeout(step, 1700);
-    }
-
-    function start(){ if (!timer && inView && !paused && !reduce) { step(); } }
-    function stop(){ if (timer) { clearTimeout(timer); timer = null; } }
-
+    prev.addEventListener('click', function(){ show(i - 1, true); schedule(); });
+    next.addEventListener('click', function(){ show(i + 1, true); schedule(); });
     btn.addEventListener('click', function(){
       paused = !paused;
       btn.textContent = paused ? 'Play' : 'Pause';
       btn.setAttribute('aria-pressed', String(!paused));
-      paused ? stop() : start();
+      paused ? clearTimeout(timer) : schedule();
     });
+    rail.addEventListener('pointerdown', function(){ clearTimeout(timer); });
 
-    function onScreen(){
-      var b = rail.getBoundingClientRect();
-      return b.top < innerHeight * 0.92 && b.bottom > innerHeight * 0.08;
-    }
-    function recheck(){
-      inView = onScreen();
-      inView && !document.hidden ? start() : stop();
-    }
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function(es){
-        inView = es[0].isIntersecting;
-        inView && !document.hidden ? start() : stop();
-      }, {threshold:0.25}).observe(rail);
-    }
-    // the observer never fires in a hidden or prerendered tab, so check directly too
-    addEventListener('scroll', recheck, {passive:true});
-    document.addEventListener('visibilitychange', recheck);
-    paint(0, false);          // never sit blank
-    recheck();
-    if (reduce) { btn.style.display = 'none'; }
+    show(0, false);
+    schedule();
+    document.addEventListener('visibilitychange', function(){ document.hidden ? clearTimeout(timer) : schedule(); });
+    if (reduce) btn.style.display = 'none';
   })();
 
   document.querySelectorAll('.snd').forEach(function(btn){
