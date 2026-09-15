@@ -532,6 +532,102 @@
     .stage.live{transform:none}
   }
 
+
+  .case.wide .cgrid{grid-template-columns:1fr}
+  .case.wide .panel{position:static;max-width:64ch}
+  .case.wide .panel p{max-width:58ch}
+  .case.wide .metric{display:inline-flex}
+
+  .tfm{display:grid;grid-template-columns:minmax(0,.62fr) auto minmax(0,1fr);gap:26px;align-items:start;margin-top:46px}
+  .tside .mono{display:block;margin-bottom:14px}
+  .tin{display:grid;gap:12px}
+  .tin.two{grid-template-columns:1fr 1fr}
+  .tin.three{grid-template-columns:repeat(3,1fr)}
+  .tin video,.tvid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:12px}
+  .tin.two video{opacity:.9;filter:saturate(.8);box-shadow:0 0 0 1px var(--hair)}
+  .tin figure{margin:0;min-width:0}
+  .tvid{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--hair),var(--amb)}
+  .tin figcaption{margin-top:11px;font-size:13.5px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
+  .tnote{margin:14px 0 0;font-size:14px;color:var(--ink-3);line-height:1.5}
+  .tarrow{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:58px;color:var(--accent)}
+  .tarrow svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .tarrow span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+  .tfm .tag{top:10px;left:10px;font-size:9px;padding:5px 8px}
+  .tfm .snd{bottom:10px;right:10px;font-size:9px;padding:6px 9px}
+  .dnote.seal{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.02em}
+  @media(max-width:900px){
+    .tfm{grid-template-columns:1fr;gap:18px}
+    .tarrow{flex-direction:row;padding-top:0}
+    .tarrow svg{transform:rotate(90deg)}
+  }
+
+
+  .system.dark{
+    background:var(--ink);color:var(--paper);
+    border-radius:34px;padding:62px 46px 56px;margin-top:64px;
+    box-shadow:0 40px 90px -50px rgba(44,62,80,.7);
+  }
+  .system.dark .mono{color:rgba(236,240,241,.62)}
+  .system.dark h3.big{color:var(--paper)}
+  .system.dark .lede{color:rgba(236,240,241,.72)}
+  .system.dark .bl{color:var(--paper)}
+  .system.dark .tri>div{background:rgba(236,240,241,.06);border-left-color:var(--accent);box-shadow:none}
+  .system.dark .tri p{color:rgba(236,240,241,.72)}
+  .system.dark .tri b{color:var(--paper)}
+  .system.dark .bnums b{color:var(--paper)}
+  .system.dark .bnums span{color:rgba(236,240,241,.62)}
+  .system.dark .stage{background:rgba(236,240,241,.06);box-shadow:0 0 0 1px rgba(236,240,241,.12)}
+  .system.dark .stage:hover{box-shadow:0 0 0 1px rgba(236,240,241,.26)}
+  .system.dark .shot{background:rgba(0,0,0,.25)}
+  .system.dark .sn{color:var(--paper)}
+  .system.dark .sn em{color:var(--accent)}
+  .system.dark .stage p{color:rgba(236,240,241,.66)}
+  .system.dark .runner{color:rgba(236,240,241,.55)}
+  .system.dark .runner button{color:var(--accent)}
+  .system.dark .runner .dots i{background:rgba(236,240,241,.24)}
+  .system.dark .runner .dots i.on{background:var(--accent)}
+  .system.dark .prail::-webkit-scrollbar-thumb{background:rgba(236,240,241,.22)}
+  .system.dark .loop{color:var(--accent);border-color:var(--accent);background:rgba(230,126,34,.16)}
+
+  .agents{margin:44px 0 30px;position:relative}
+  .alab{
+    display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    color:rgba(236,240,241,.55);margin-bottom:14px;
+  }
+  .achips{display:flex;flex-wrap:wrap;gap:10px}
+  .achip{
+    display:flex;flex-direction:column;gap:3px;padding:12px 16px;border-radius:14px;
+    background:rgba(230,126,34,.12);box-shadow:0 0 0 1px rgba(230,126,34,.34);
+    font-size:12px;color:rgba(236,240,241,.66);line-height:1.35;
+  }
+  .achip b{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.04em;font-weight:600}
+  .afeed{
+    display:block;height:26px;margin-top:6px;margin-left:26px;width:2px;
+    background:linear-gradient(180deg,var(--accent),rgba(230,126,34,0));
+  }
+  @media(max-width:900px){.system.dark{padding:34px 22px 34px;border-radius:24px}}
+
+
+  .mq{margin-top:40px;overflow:hidden;position:relative;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .mqrow{display:flex;width:max-content;animation:mqslide 38s linear infinite}
+  .mq:hover .mqrow{animation-play-state:paused}
+  .mqset{display:flex;align-items:center;gap:52px;padding-right:52px}
+  .mqset span{display:flex;flex-direction:column;align-items:center;gap:9px;flex:0 0 auto}
+  .mqset img{
+    height:30px;width:auto;object-fit:contain;
+    filter:grayscale(1) opacity(.5);transition:filter .45s var(--ease);
+  }
+  .mqset span:hover img{filter:none}
+  .mqset i{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-style:normal}
+  @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+  @media(prefers-reduced-motion:reduce){
+    .mqrow{animation:none;flex-wrap:wrap}
+    .mq{-webkit-mask-image:none;mask-image:none}
+  }
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
     transition:opacity .88s var(--ease),transform .88s var(--ease),filter .88s var(--ease)}
@@ -604,110 +700,84 @@
   </header>
 
   <!-- ---------------------------------------------------------- APEX -->
-  <section class="case" id="c1">
-    <div class="cgrid">
+  <section class="case wide" id="c1">
     <div class="panel">
       <div class="mono rv">01 &middot; Meta &middot; United States</div>
       <h2 class="rv brand"><img src="img/logo/apex.png" alt="Apex Operations" style="max-height:32px"></h2>
       <p class="rv">A San Jose agency selling lead generation to contractors across 28 states, on a guarantee: 150 qualified leads in 90 days, or they work free.</p>
       <p class="rv">Four AI ads against the agency's own filmed ones. Mine brought leads in cheaper.</p>
       <div class="metric rv"><span class="v" data-num="35%">35%</span><span class="l">lower cost per lead</span></div>
-    </div>
 
-    <div class="reel">
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">Outcome stack</span>
-          <video src="vid/ax_third.mp4" poster="img/ax_third.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;More homeowner inquiries, more appointments, more jobs closed.&rdquo;</p>
-        <p class="why">Third cut of the proven script. The variable is delivery and setting, never the angle.</p>
-      </div>
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">Offer first</span>
-          <video src="vid/ax_street.mp4" poster="img/apex1.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;That isn't a marketing strategy. That's hope.&rdquo;</p>
-        <p class="why">Sharpest line in the set. Names the behaviour, then takes it away.</p>
-      </div>
-      <div class="card rv">
-        <div class="vidwrap">
-          <span class="tag">On site</span>
-          <video src="vid/ax_site.mp4" poster="img/apex2.jpg" muted loop playsinline preload="none"></video>
-          <button class="snd" type="button" aria-label="Toggle sound">Sound</button>
-        </div>
-        <p class="hook">&ldquo;Roofer, ADU builder, renovator, general contractor.&rdquo;</p>
-        <p class="why">ADU is a California permit class. A contractor hears it and knows someone did the homework.</p>
-      </div>
-    </div>
-    </div>
-
-    <div class="swap rv">
-      <div class="swapside">
-        <span class="mono">What they sent me</span>
-        <div class="rawpair">
+    <div class="tfm rv">
+      <div class="tside">
+        <span class="mono">What they sent me &middot; ten minutes, one doorway</span>
+        <div class="tin two">
           <video src="vid/raw_founder_a.mp4" poster="img/raw_a.jpg" muted loop playsinline preload="none"></video>
           <video src="vid/raw_founder_b.mp4" poster="img/raw_b.jpg" muted loop playsinline preload="none"></video>
         </div>
-        <p>Two phone clips. Ten minutes of their time.</p>
+        <p class="tnote">Two phone clips. No crew, no studio, no shoot day.</p>
       </div>
 
-      <div class="swaparrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+      <div class="tarrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 12h16"/><path d="M13 6l6 6-6 6"/></svg>
+        <span>became</span>
       </div>
 
-      <div class="swapside">
-        <span class="mono">What went live</span>
-        <div class="rawpair three">
-          <video src="vid/ax_third.mp4" poster="img/ax_third.jpg" muted loop playsinline preload="none"></video>
-          <video src="vid/ax_street.mp4" poster="img/apex1.jpg" muted loop playsinline preload="none"></video>
-          <video src="vid/ax_site.mp4" poster="img/apex2.jpg" muted loop playsinline preload="none"></video>
+      <div class="tside">
+        <span class="mono">What went live &middot; four ads, none of it filmed</span>
+        <div class="tin three">
+          <figure>
+            <div class="tvid"><span class="tag">Outcome stack</span>
+              <video src="vid/ax_third.mp4" poster="img/ax_third.jpg" muted loop playsinline preload="none"></video>
+              <button class="snd" type="button" aria-label="Toggle sound">Sound</button></div>
+            <figcaption>&ldquo;More homeowner inquiries, more appointments, more jobs closed.&rdquo;</figcaption>
+          </figure>
+          <figure>
+            <div class="tvid"><span class="tag">Offer first</span>
+              <video src="vid/ax_street.mp4" poster="img/apex1.jpg" muted loop playsinline preload="none"></video>
+              <button class="snd" type="button" aria-label="Toggle sound">Sound</button></div>
+            <figcaption>&ldquo;That isn&rsquo;t a marketing strategy. That&rsquo;s hope.&rdquo;</figcaption>
+          </figure>
+          <figure>
+            <div class="tvid"><span class="tag">On site</span>
+              <video src="vid/ax_site.mp4" poster="img/apex2.jpg" muted loop playsinline preload="none"></video>
+              <button class="snd" type="button" aria-label="Toggle sound">Sound</button></div>
+            <figcaption>&ldquo;Roofer, ADU builder, renovator, general contractor.&rdquo;</figcaption>
+          </figure>
         </div>
-        <p>Four ads. Driveway, job site, build in progress. None of it filmed.</p>
+        <p class="tnote">Driveway, job site, build in progress. Same two faces, three settings.</p>
       </div>
     </div>
 
     <div class="costline rv">
       <div><b data-num="10">10</b><span>minutes of footage in</span></div>
-      <div><b data-num="4">4</b><span>finished ads built from it</span></div>
+      <div><b data-num="4">4</b><span>finished ads out</span></div>
       <div><b data-num="0">0</b><span>shoot days or crew</span></div>
       <div><b data-num="35">35<em>%</em></b><span>cheaper per lead than filmed</span></div>
     </div>
 
     <div class="viz rv">
-      <h4 class="vizt">Cost per lead</h4>
+      <h4 class="vizt">Cost per lead, indexed</h4>
       <div class="bars">
-        <div class="bar hot"><span class="bl2">My AI ads</span><i style="width:65%"></i><b>$53.38</b></div>
-        <div class="bar"><span class="bl2">Their filmed ads</span><i style="width:100%"></i><b>$81.57</b></div>
+        <div class="bar hot"><span class="bl2">My AI ads</span><i style="width:65%"></i><b>65</b></div>
+        <div class="bar"><span class="bl2">Their filmed ads</span><i style="width:100%"></i><b>100</b></div>
       </div>
-      <p class="vizn">Lower is better. Same campaign, same week, same audience.</p>
+      <p class="vizn">Indexed to the filmed ads at 100, lower is better. Same campaign, same week, same audience. The absolute figures are the client&rsquo;s and stay with them.</p>
     </div>
 
     <details class="deep rv">
-      <summary>See the campaign data</summary>
+      <summary>How the split was measured</summary>
       <div class="deepin">
-        <p class="dnote">Meta Ads Manager, lead campaign. Sorted by spend. The four AI rows are mine, generated from the two clips above; the rest are the agency's filmed ads.</p>
+        <p class="dnote">One lead campaign, same week. Four ads were mine, generated from the two clips above; the rest were the agency&rsquo;s own filmed ads.</p>
         <div class="tw"><table>
-          <thead><tr><th>Ad</th><th>Source</th><th>Spend</th><th>Leads</th><th>Cost per lead</th></tr></thead>
+          <thead><tr><th>Source</th><th>Ads</th><th>Share of spend</th><th>Share of leads</th><th>Cost per lead</th></tr></thead>
           <tbody>
-            <tr><td>3_AS1 | V9</td><td><span class="ai">AI</span></td><td>$1,147.42</td><td>21</td><td>$54.64</td></tr>
-            <tr class="ctrl"><td>AS1 | V4</td><td>filmed</td><td>$858.74</td><td>11</td><td>$78.07</td></tr>
-            <tr><td>3_AS1 | V11</td><td><span class="ai">AI</span></td><td>$321.10</td><td>6</td><td>$53.52</td></tr>
-            <tr class="best"><td>AS1 | V9</td><td><span class="ai">AI</span></td><td>$223.16</td><td>6</td><td>$37.19</td></tr>
-            <tr><td>3_AS1 | V10</td><td><span class="ai">AI</span></td><td>$176.58</td><td>2</td><td>$88.29</td></tr>
-            <tr class="ctrl"><td>AS1 | V6</td><td>filmed</td><td>$146.58</td><td>3</td><td>$48.86</td></tr>
-            <tr class="ctrl"><td>AS1 | V5</td><td>filmed</td><td>$142.53</td><td>&mdash;</td><td>&mdash;</td></tr>
-            <tr class="ctrl"><td>AS1 | V7</td><td>filmed</td><td>$40.48</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr class="best"><td><span class="ai">AI</span> mine</td><td>4</td><td>60%</td><td>70%</td><td>index 65</td></tr>
+            <tr class="ctrl"><td>filmed, theirs</td><td>6</td><td>40%</td><td>30%</td><td>index 100</td></tr>
           </tbody>
-          <tfoot>
-            <tr><td>AI ads</td><td></td><td>$1,868.26</td><td>35</td><td><b>$53.38</b></td></tr>
-            <tr><td>Filmed ads</td><td></td><td>$1,223.62</td><td>15</td><td><b>$81.57</b></td></tr>
-          </tfoot>
         </table></div>
-        <p class="dnote">The AI ads carried seventy percent of the leads on sixty percent of the spend.</p>
+        <p class="dnote">The AI ads took <b>seventy percent of the leads on sixty percent of the spend</b>. The best single ad landed at under half the cost of the filmed control.</p>
+        <p class="dnote seal">Account screenshots available on request in an interview, redacted for spend.</p>
       </div>
     </details>
   </section>
@@ -780,19 +850,19 @@
     <details class="deep rv">
       <summary>See the campaign data</summary>
       <div class="deepin">
-        <p class="dnote">Meta Ads Manager, purchase campaign, all five ad sets. Same creative, different audiences.</p>
+        <p class="dnote">One purchase campaign, five ad sets, same creative. Spend shown as share so the client budget stays theirs.</p>
         <div class="tw"><table>
-          <thead><tr><th>Ad set</th><th>Audience</th><th>Spend</th><th>Reach</th><th>Freq.</th><th>CTR</th></tr></thead>
+          <thead><tr><th>Ad set</th><th>Audience</th><th>Share of spend</th><th>Freq.</th><th>CTR</th></tr></thead>
           <tbody>
-            <tr class="best"><td>AS1</td><td>Open, US 22-65+</td><td>$589.88</td><td>27,884</td><td>1.17</td><td>12.67%</td></tr>
-            <tr><td>AS2</td><td>Narrow</td><td>$305.46</td><td>10,723</td><td>1.15</td><td>10.53%</td></tr>
-            <tr class="ctrl"><td>AS5</td><td>Lookalike 2%</td><td>$134.87</td><td>2,133</td><td>2.01</td><td>1.40%</td></tr>
-            <tr class="ctrl"><td>AS4</td><td>Lookalike 1%</td><td>$88.54</td><td>837</td><td>2.15</td><td>1.45%</td></tr>
-            <tr class="ctrl"><td>AS3</td><td>Surgery list</td><td>$26.00</td><td>73</td><td class="warn">10.12</td><td>1.49%</td></tr>
+            <tr class="best"><td>AS1</td><td>Open, US 22-65+</td><td>52%</td><td>1.17</td><td>12.67%</td></tr>
+            <tr><td>AS2</td><td>Narrow</td><td>27%</td><td>1.15</td><td>10.53%</td></tr>
+            <tr class="ctrl"><td>AS5</td><td>Lookalike 2%</td><td>12%</td><td>2.01</td><td>1.40%</td></tr>
+            <tr class="ctrl"><td>AS4</td><td>Lookalike 1%</td><td>8%</td><td>2.15</td><td>1.45%</td></tr>
+            <tr class="ctrl"><td>AS3</td><td>Purchased list</td><td>2%</td><td class="warn">10.12</td><td>1.49%</td></tr>
           </tbody>
         </table></div>
         <p class="dnote"><b>Broad beat every custom audience by about eight times.</b></p>
-        <p class="dnote"><b>AS3 was serving ten times over to seventy three people.</b> I flagged it. A list that small cannot absorb budget.</p>
+        <p class="dnote"><b>AS3 was serving ten times over to a list of seventy three.</b> I flagged it. A list that small cannot absorb budget.</p>
         <p class="dnote">Creative mattered as much: same ad sets, V1 ran <b>12.81%</b> and <b>11.87%</b>, V4 managed <b>2.91%</b> and <b>2.14%</b>.</p>
       </div>
     </details>
@@ -899,7 +969,7 @@
   </section>
 
 
-  <section class="system" style="padding-block:140px 0;border-top:0">
+  <section class="system dark" style="padding-block:0;border-top:0">
     <div class="mono rv">Echo &middot; the manufacturing problem</div>
     <h3 class="big rv">So I stopped making videos, and built the line that makes them.</h3>
 
@@ -926,6 +996,15 @@
       <div><b data-num="386">386</b><span>credits saved on one recovered batch</span></div>
     </div>
 
+      <div class="agents rv">
+        <span class="alab">Three agents I wrote</span>
+        <div class="achips">
+          <span class="achip"><b>maya-voice</b>64 transcripts, 51k words</span>
+          <span class="achip"><b>hook-forge</b>one archetype per slot</span>
+          <span class="achip"><b>body-refresh</b>freezes the teaching</span>
+        </div>
+        <span class="afeed" aria-hidden="true"></span>
+      </div>
     <div class="runner rv">
       <span>One command, running</span>
       <span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i></span>
@@ -989,6 +1068,13 @@
     <div class="mono rv">What I work in</div>
     <h3 class="big rv">The stack, and what each part is for.</h3>
 
+    <div class="mq rv" aria-label="Tools I work in">
+      <div class="mqrow">
+        <div class="mqset"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="OpenAI Codex" loading="lazy"><i>OpenAI Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
+        <div class="mqset" aria-hidden="true"><span><img src="img/tool/higgsfield.png" alt="Higgsfield" loading="lazy"><i>Higgsfield</i></span><span><img src="img/tool/heygen.png" alt="HeyGen" loading="lazy"><i>HeyGen</i></span><span><img src="img/tool/elevenlabs.svg" alt="ElevenLabs" loading="lazy"><i>ElevenLabs</i></span><span><img src="img/tool/claude.svg" alt="Claude" loading="lazy"><i>Claude</i></span><span><img src="img/tool/openai.svg" alt="OpenAI Codex" loading="lazy"><i>OpenAI Codex</i></span><span><img src="img/tool/n8n.svg" alt="n8n" loading="lazy"><i>n8n</i></span><span><img src="img/tool/make.svg" alt="Make" loading="lazy"><i>Make</i></span><span><img src="img/tool/python.svg" alt="Python" loading="lazy"><i>Python</i></span><span><img src="img/tool/meta.svg" alt="Meta Ads" loading="lazy"><i>Meta Ads</i></span></div>
+      </div>
+    </div>
+
     <div class="sgroups">
       <div class="sgroup rv">
         <h4><svg class="ic"><use href="#ic-play"/></svg> Generation</h4>
@@ -996,7 +1082,6 @@
           <li><svg class="ic sm"><use href="#ic-play"/></svg> Higgsfield, kling3_0</li>
           <li><svg class="ic sm"><use href="#ic-image"/></svg> HeyGen, digital presenters</li>
           <li><svg class="ic sm"><use href="#ic-mic"/></svg> ElevenLabs, voice direction</li>
-          <li><svg class="ic sm"><use href="#ic-layers"/></svg> Character held across a campaign</li>
         </ul>
       </div>
       <div class="sgroup rv">
@@ -1005,7 +1090,6 @@
           <li><svg class="ic sm"><use href="#ic-terminal"/></svg> Claude Code, Codex</li>
           <li><svg class="ic sm"><use href="#ic-flow"/></svg> n8n, Make.com</li>
           <li><svg class="ic sm"><use href="#ic-cpu"/></svg> Python, custom agent skills</li>
-          <li><svg class="ic sm"><use href="#ic-clock"/></svg> Human-in-the-loop approval gates</li>
         </ul>
       </div>
       <div class="sgroup rv">
@@ -1014,7 +1098,6 @@
           <li><svg class="ic sm"><use href="#ic-pen"/></svg> Hooks, angles, awareness levels</li>
           <li><svg class="ic sm"><use href="#ic-target"/></svg> Offer and objection mapping</li>
           <li><svg class="ic sm"><use href="#ic-shield"/></svg> Platform policy, read at scripting</li>
-          <li><svg class="ic sm"><use href="#ic-layers"/></svg> Batch design and creative testing</li>
         </ul>
       </div>
       <div class="sgroup rv">
@@ -1023,7 +1106,6 @@
           <li><svg class="ic sm"><use href="#ic-chart"/></svg> Meta Ads Manager, CTR and CPL</li>
           <li><svg class="ic sm"><use href="#ic-send"/></svg> Meta Graph API, scheduled publishing</li>
           <li><svg class="ic sm"><use href="#ic-cloud"/></svg> rclone, Drive delivery</li>
-          <li><svg class="ic sm"><use href="#ic-chart"/></svg> First-party performance analysis</li>
         </ul>
       </div>
     </div>
