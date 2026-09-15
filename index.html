@@ -489,10 +489,10 @@
   .bar .bl2{font-size:14px;color:var(--ink-2);line-height:1.3}
   .bar i{
     display:block;height:22px;border-radius:0 5px 5px 0;background:var(--line-2);
-    width:var(--w);                     /* correct without JS: never a zero-width chart */
+    transform-origin:left center;       /* width is inline, so the bar is right without JS */
   }
-  .js-anim .bar i{width:0;transition:width 1.1s var(--ease)}
-  .js-anim .in .bar i,.js-anim .rv.in .bar i,.js-anim .deep[open] .bar i{width:var(--w)}
+  .js-anim .bar i{transform:scaleX(0);transition:transform 1.05s var(--ease)}
+  .js-anim .in .bar i,.js-anim .rv.in .bar i,.js-anim .deep[open] .bar i{transform:scaleX(1)}
   .bar.hot i{background:var(--accent)}
   .bar b{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.01em;color:var(--ink);font-variant-numeric:tabular-nums}
   .bar.hot b{color:var(--accent-deep)}
@@ -680,8 +680,8 @@
     <div class="viz rv">
       <h4 class="vizt">Cost per lead</h4>
       <div class="bars">
-        <div class="bar hot"><span class="bl2">My AI ads</span><i style="--w:65%"></i><b>$53.38</b></div>
-        <div class="bar"><span class="bl2">Their filmed ads</span><i style="--w:100%"></i><b>$81.57</b></div>
+        <div class="bar hot"><span class="bl2">My AI ads</span><i style="width:65%"></i><b>$53.38</b></div>
+        <div class="bar"><span class="bl2">Their filmed ads</span><i style="width:100%"></i><b>$81.57</b></div>
       </div>
       <p class="vizn">Lower is better. Same campaign, same week, same audience.</p>
     </div>
@@ -769,11 +769,11 @@
     <div class="viz rv">
       <h4 class="vizt">Click-through rate by audience</h4>
       <div class="bars">
-        <div class="bar hot"><span class="bl2">Open, US 22-65+</span><i style="--w:100%"></i><b>12.67%</b></div>
-        <div class="bar hot"><span class="bl2">Narrow interest</span><i style="--w:83%"></i><b>10.53%</b></div>
-        <div class="bar"><span class="bl2">Lookalike 2%</span><i style="--w:11%"></i><b>1.40%</b></div>
-        <div class="bar"><span class="bl2">Lookalike 1%</span><i style="--w:11.5%"></i><b>1.45%</b></div>
-        <div class="bar"><span class="bl2">Purchased surgery list</span><i style="--w:12%"></i><b>1.49%</b></div>
+        <div class="bar hot"><span class="bl2">Open, US 22-65+</span><i style="width:100%"></i><b>12.67%</b></div>
+        <div class="bar hot"><span class="bl2">Narrow interest</span><i style="width:83%"></i><b>10.53%</b></div>
+        <div class="bar"><span class="bl2">Lookalike 2%</span><i style="width:11%"></i><b>1.40%</b></div>
+        <div class="bar"><span class="bl2">Lookalike 1%</span><i style="width:11.5%"></i><b>1.45%</b></div>
+        <div class="bar"><span class="bl2">Purchased surgery list</span><i style="width:12%"></i><b>1.49%</b></div>
       </div>
       <p class="vizn">The audiences everyone assumes are warmest were the worst in the account.</p>
     </div>
