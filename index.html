@@ -1,7 +1,7 @@
 <title>Ayush Sharma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="AI creative strategist. Direct-response ads from angle to finished asset, and the systems that ship them.">
 
@@ -24,7 +24,8 @@
     --shell:rgba(44,62,80,.05);
     --amb:0 28px 56px -30px rgba(44,62,80,.26), 0 4px 14px -8px rgba(44,62,80,.12);
     --amb-hi:0 40px 72px -32px rgba(44,62,80,.32), 0 6px 18px -8px rgba(44,62,80,.14);
-    --sans:"Jost","Futura","Century Gothic",system-ui,sans-serif;
+    --sans:"Poppins",system-ui,-apple-system,sans-serif;
+    --display:"Bebas Neue","Oswald",Impact,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,monospace;
   }
   *{box-sizing:border-box}
@@ -379,6 +380,100 @@
     .dl{padding:16px 16px 16px 26px}
   }
 
+
+  h1,.panel h2,h3.big,.proof .n,.metric .v,.bnums b,.specs .n,.bl,.sn,.brand.echo span,nav b{
+    font-family:var(--display);font-weight:400;
+  }
+  h1{letter-spacing:.005em;line-height:.9;font-size:clamp(52px,9vw,128px);max-width:18ch}
+  .panel h2,h3.big{letter-spacing:.008em;line-height:.94}
+  .proof .n,.metric .v,.bnums b,.specs .n{letter-spacing:.01em;font-weight:400}
+  .bl{font-size:26px;letter-spacing:.01em;line-height:1.05}
+  .sn{font-size:23px;letter-spacing:.012em}
+  .sn em{font-style:normal;color:var(--accent-deep);margin-right:8px}
+  .brand.echo span{font-size:52px;letter-spacing:.01em}
+  nav b{font-size:20px;letter-spacing:.015em;font-weight:400}
+  .role{font-weight:600;letter-spacing:-.01em}
+  .hook{font-weight:600}
+
+
+  .rail{
+    position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:45;
+    display:flex;flex-direction:column;gap:3px;
+  }
+  .rail a{
+    display:flex;align-items:center;gap:10px;padding:7px 9px;border-radius:999px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);
+    transition:color .4s var(--ease),background .4s var(--ease);
+  }
+  .rail i{
+    width:18px;height:2px;border-radius:2px;background:var(--line-2);flex:0 0 auto;
+    transition:width .5s var(--ease),background .4s var(--ease);
+  }
+  .rail b{font-weight:600}
+  .rail span{
+    max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+    transition:max-width .5s var(--ease),opacity .4s var(--ease);
+  }
+  .rail a:hover span,.rail a.on span{max-width:140px;opacity:1}
+  .rail a:hover{color:var(--ink-2)}
+  .rail a.on{color:var(--accent-ink)}
+  .rail a.on i{width:30px;background:var(--accent)}
+  @media(max-width:1180px){.rail{display:none}}
+
+
+  .swap{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:center;margin-top:46px}
+  .swapside .mono{display:block;margin-bottom:14px}
+  .rawpair{display:flex;gap:10px}
+  .rawpair video,.rawpair img{
+    width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:var(--shell);
+    box-shadow:0 0 0 1px var(--hair);
+  }
+  .rawpair.three video,.rawpair.three img{border-radius:12px}
+  .swapside p{margin:16px 0 0;font-size:15px;color:var(--ink-2);line-height:1.55}
+  .swaparrow{color:var(--accent);display:flex;align-items:center;justify-content:center}
+  .swaparrow svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  @media(max-width:860px){
+    .swap{grid-template-columns:1fr;gap:20px}
+    .swaparrow{transform:rotate(90deg)}
+  }
+
+  .costline{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin-top:44px;padding-top:34px;border-top:1px solid var(--hair)}
+  .costline b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,62px);line-height:1;color:var(--ink)}
+  .costline b em{font-style:normal;font-size:.6em;color:var(--accent-deep)}
+  .costline span{display:block;margin-top:10px;font-size:14.5px;color:var(--ink-2);line-height:1.45}
+
+  .deep{margin-top:40px;border-top:1px solid var(--hair);padding-top:8px}
+  .deep summary{
+    cursor:pointer;list-style:none;padding:16px 0;font-family:var(--mono);font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);
+    display:flex;align-items:center;gap:11px;
+  }
+  .deep summary::-webkit-details-marker{display:none}
+  .deep summary::before{
+    content:"";width:9px;height:9px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);
+    transform:rotate(45deg) translateY(-2px);transition:transform .4s var(--ease);flex:0 0 auto;
+  }
+  .deep[open] summary::before{transform:rotate(-135deg) translateY(-2px)}
+  .deep summary:hover{color:var(--accent-deep)}
+  .deepin{padding-bottom:14px}
+  .dnote{margin:0 0 16px;font-size:15px;color:var(--ink-2);line-height:1.6;max-width:70ch}
+  .dnote b{color:var(--ink);font-weight:600}
+  .tw{overflow-x:auto;margin:6px 0 22px}
+  .deep table{border-collapse:collapse;width:100%;min-width:520px;font-size:14.5px}
+  .deep th{
+    text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:600;padding:0 14px 10px 0;border-bottom:1px solid var(--hair-2);
+  }
+  .deep td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hair);color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .deep tbody tr.best td{color:var(--ink);font-weight:600}
+  .deep tbody tr.ctrl td{color:var(--ink-3)}
+  .deep tfoot td{padding-top:14px;color:var(--ink);font-weight:600;border-bottom:0}
+  .deep .ai{
+    font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:3px 8px;border-radius:999px;
+    background:rgba(230,126,34,.14);color:var(--accent-ink);font-weight:600;
+  }
+  .deep .warn{color:var(--accent-deep);font-weight:700}
+
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
     transition:opacity .88s var(--ease),transform .88s var(--ease),filter .88s var(--ease)}
@@ -413,6 +508,13 @@
 <div id="amb" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
 <div id="grid" aria-hidden="true"></div>
 <div id="grain" aria-hidden="true"></div>
+<nav class="rail" aria-label="Sections">
+  <a href="#c1"><i></i><b>01</b><span>Apex</span></a>
+  <a href="#c2"><i></i><b>02</b><span>BlueMagic</span></a>
+  <a href="#c3"><i></i><b>03</b><span>Echo</span></a>
+  <a href="#c4"><i></i><b>04</b><span>Techy Tantrums</span></a>
+  <a href="#c5"><i></i><b>05</b><span>Statics</span></a>
+</nav>
 <div id="bar"></div>
 
 <nav>
@@ -444,7 +546,7 @@
   </header>
 
   <!-- ---------------------------------------------------------- APEX -->
-  <section class="case">
+  <section class="case" id="c1">
     <div class="panel">
       <div class="mono rv">01 &middot; Meta &middot; United States</div>
       <h2 class="rv brand"><img src="img/logo/apex.png" alt="Apex Operations" style="max-height:32px"></h2>
@@ -482,10 +584,67 @@
         <p class="why">ADU is a California permit class. A contractor hears it and knows someone did the homework.</p>
       </div>
     </div>
+
+    <div class="swap rv">
+      <div class="swapside">
+        <span class="mono">What they sent me</span>
+        <div class="rawpair">
+          <video src="vid/raw_founder_a.mp4" poster="img/raw_a.jpg" muted loop playsinline preload="none"></video>
+          <video src="vid/raw_founder_b.mp4" poster="img/raw_b.jpg" muted loop playsinline preload="none"></video>
+        </div>
+        <p>Two phone clips, both founders, same doorway. Around ten minutes of their time. No crew, no studio, no shoot day.</p>
+      </div>
+
+      <div class="swaparrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="swapside">
+        <span class="mono">What went live</span>
+        <div class="rawpair three">
+          <img src="img/ax_third.jpg" alt="Apex ad on a residential street">
+          <img src="img/apex1.jpg" alt="Apex ad with crew on a jobsite">
+          <img src="img/apex2.jpg" alt="Apex ad, close on the founder">
+        </div>
+        <p>Twenty two ads across driveways, job sites and builds in progress. Same two people, different location every time, none of it filmed.</p>
+      </div>
+    </div>
+
+    <div class="costline rv">
+      <div><b data-num="10">10</b><span>minutes of their footage</span></div>
+      <div><b data-num="22">22</b><span>ads produced from it</span></div>
+      <div><b data-num="0">0</b><span>shoot days, crew or travel</span></div>
+      <div><b data-num="35">35<em>%</em></b><span>lower cost per lead than the filmed ads</span></div>
+    </div>
+
+    <details class="deep rv">
+      <summary>See the campaign data</summary>
+      <div class="deepin">
+        <p class="dnote">Meta Ads Manager, lead campaign. Ten of twenty two ads shown, sorted by spend. Ads marked AI are fully generated from the two clips above.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Ad</th><th>Source</th><th>Spend</th><th>Leads</th><th>Cost per lead</th></tr></thead>
+          <tbody>
+            <tr><td>3_AS1 | V9</td><td><span class="ai">AI</span></td><td>$1,147.42</td><td>21</td><td>$54.64</td></tr>
+            <tr class="ctrl"><td>AS1 | V4</td><td>filmed</td><td>$858.74</td><td>11</td><td>$78.07</td></tr>
+            <tr><td>3_AS1 | V11</td><td><span class="ai">AI</span></td><td>$321.10</td><td>6</td><td>$53.52</td></tr>
+            <tr class="best"><td>AS1 | V9</td><td><span class="ai">AI</span></td><td>$223.16</td><td>6</td><td>$37.19</td></tr>
+            <tr><td>3_AS1 | V10</td><td><span class="ai">AI</span></td><td>$176.58</td><td>2</td><td>$88.29</td></tr>
+            <tr class="ctrl"><td>AS1 | V6</td><td>filmed</td><td>$146.58</td><td>3</td><td>$48.86</td></tr>
+            <tr class="ctrl"><td>AS1 | V5</td><td>filmed</td><td>$142.53</td><td>&mdash;</td><td>&mdash;</td></tr>
+            <tr class="ctrl"><td>AS1 | V7</td><td>filmed</td><td>$40.48</td><td>&mdash;</td><td>&mdash;</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>AI ads</td><td></td><td>$1,868.26</td><td>35</td><td><b>$53.38</b></td></tr>
+            <tr><td>Filmed ads</td><td></td><td>$1,223.62</td><td>15</td><td><b>$81.57</b></td></tr>
+          </tfoot>
+        </table></div>
+        <p class="dnote">The AI ads carried seventy percent of the leads on sixty percent of the spend.</p>
+      </div>
+    </details>
   </section>
 
   <!-- ---------------------------------------------------------- BLUEMAGIC -->
-  <section class="case">
+  <section class="case" id="c2">
     <div class="panel">
       <div class="mono rv">02 &middot; Meta &middot; UK and EU</div>
       <h2 class="rv brand"><img src="img/logo/bluemagic.svg" alt="BlueMagic Group" style="max-height:52px"></h2>
@@ -535,10 +694,30 @@
         <p class="why">Payoff up front. Also the weakest of the four, and the teardown below says why.</p>
       </div>
     </div>
+
+    <details class="deep rv">
+      <summary>See the campaign data</summary>
+      <div class="deepin">
+        <p class="dnote">Meta Ads Manager, purchase campaign, all five ad sets. Same creative, different audiences.</p>
+        <div class="tw"><table>
+          <thead><tr><th>Ad set</th><th>Audience</th><th>Spend</th><th>Reach</th><th>Freq.</th><th>CTR</th></tr></thead>
+          <tbody>
+            <tr class="best"><td>AS1</td><td>Open, US 22-65+</td><td>$589.88</td><td>27,884</td><td>1.17</td><td>12.67%</td></tr>
+            <tr><td>AS2</td><td>Narrow</td><td>$305.46</td><td>10,723</td><td>1.15</td><td>10.53%</td></tr>
+            <tr class="ctrl"><td>AS5</td><td>Lookalike 2%</td><td>$134.87</td><td>2,133</td><td>2.01</td><td>1.40%</td></tr>
+            <tr class="ctrl"><td>AS4</td><td>Lookalike 1%</td><td>$88.54</td><td>837</td><td>2.15</td><td>1.45%</td></tr>
+            <tr class="ctrl"><td>AS3</td><td>Surgery list</td><td>$26.00</td><td>73</td><td class="warn">10.12</td><td>1.49%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="dnote"><b>Broad beat every custom audience by about eight times.</b> The lookalikes and the purchased surgery list, the audiences you would assume were the warmest, were the worst performers in the account.</p>
+        <p class="dnote"><b>AS3 was being served ten times to seventy three people.</b> I flagged it. A list that small cannot absorb budget, and frequency that high burns the audience rather than converting it.</p>
+        <p class="dnote">Creative mattered as much as targeting: inside the same ad sets, V1 ran at <b>12.81%</b> and <b>11.87%</b> while V4 managed <b>2.91%</b> and <b>2.14%</b>. Same audience, four to six times the result.</p>
+      </div>
+    </details>
   </section>
 
   <!-- ---------------------------------------------------------- ECHO -->
-  <section class="case">
+  <section class="case" id="c3">
     <div class="panel">
       <div class="mono rv">03 &middot; Organic &middot; app installs</div>
       <h2 class="rv brand echo"><img src="img/logo/echo.svg" alt=""><span>Echo</span></h2>
@@ -582,7 +761,7 @@
 
 
   <!-- ---------------------------------------------------------- TECHY TANTRUMS -->
-  <section class="case">
+  <section class="case" id="c4">
     <div class="panel">
       <div class="mono rv">04 &middot; Meta &middot; Australia</div>
       <h2 class="rv brand"><img src="img/logo/techytantrums.png" alt="Techy Tantrums" style="max-height:40px"></h2>
@@ -616,7 +795,7 @@
   </section>
 
   <!-- ---------------------------------------------------------- STATICS -->
-  <section class="statics">
+  <section class="statics" id="c5">
     <div class="mono rv">05 &middot; Statics &middot; 1080 &times; 1350</div>
     <h3 class="big rv">Six levers the video could not pull</h3>
     <p class="lede rv">A presenter can only test what a presenter can say. Every line here went through the platform policy checklist before layout, not after rejection.</p>
@@ -928,6 +1107,25 @@
       });
     }, {threshold:0.6});
     nums.forEach(function(n){ no.observe(n); });
+  })();
+
+
+  // section rail
+  (function(){
+    var links = [].slice.call(document.querySelectorAll('.rail a'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+    var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        var i = secs.indexOf(en.target);
+        if (i < 0) return;
+        if (en.isIntersecting) {
+          links.forEach(function(l){ l.classList.remove('on'); });
+          links[i].classList.add('on');
+        }
+      });
+    }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+    secs.forEach(function(sec){ if (sec) ro.observe(sec); });
   })();
 
   document.querySelectorAll('.snd').forEach(function(btn){
