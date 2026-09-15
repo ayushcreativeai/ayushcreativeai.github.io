@@ -1283,8 +1283,9 @@
     // the observer never fires in a hidden or prerendered tab, so check directly too
     addEventListener('scroll', recheck, {passive:true});
     document.addEventListener('visibilitychange', recheck);
+    paint(0, false);          // never sit blank
     recheck();
-    if (reduce) { paint(0, false); btn.style.display = 'none'; }
+    if (reduce) { btn.style.display = 'none'; }
   })();
 
   document.querySelectorAll('.snd').forEach(function(btn){
