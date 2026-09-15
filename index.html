@@ -538,27 +538,25 @@
   .case.wide .panel p{max-width:58ch}
   .case.wide .metric{display:inline-flex}
 
-  .tfm{display:grid;grid-template-columns:minmax(0,.62fr) auto minmax(0,1fr);gap:26px;align-items:start;margin-top:46px}
+  .tfm{display:block;margin-top:46px}
   .tside .mono{display:block;margin-bottom:14px}
   .tin{display:grid;gap:12px}
-  .tin.two{grid-template-columns:1fr 1fr}
-  .tin.three{grid-template-columns:repeat(3,1fr)}
+  .tin.two{grid-template-columns:repeat(2,minmax(0,300px))}
+  .tin.three{grid-template-columns:repeat(3,minmax(0,300px))}
   .tin video,.tvid video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border-radius:12px}
   .tin.two video{opacity:.9;filter:saturate(.8);box-shadow:0 0 0 1px var(--hair)}
   .tin figure{margin:0;min-width:0}
   .tvid{position:relative;border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--hair),var(--amb)}
-  .tin figcaption{margin-top:11px;font-size:13.5px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
-  .tnote{margin:14px 0 0;font-size:14px;color:var(--ink-3);line-height:1.5}
-  .tarrow{display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:58px;color:var(--accent)}
-  .tarrow svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .tin figcaption{margin-top:12px;font-size:15px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
+  .tnote{margin:16px 0 0;font-size:15px;color:var(--ink-3);line-height:1.5}
+  .tarrow{display:flex;align-items:center;gap:12px;margin:26px 0;color:var(--accent)}
+  .tarrow svg{width:26px;height:26px;transform:rotate(90deg);fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
   .tarrow span{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-  .tfm .tag{top:10px;left:10px;font-size:9px;padding:5px 8px}
-  .tfm .snd{bottom:10px;right:10px;font-size:9px;padding:6px 9px}
+  .tfm .tag{top:13px;left:13px}
+  .tfm .snd{bottom:13px;right:13px}
   .dnote.seal{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.02em}
-  @media(max-width:900px){
-    .tfm{grid-template-columns:1fr;gap:18px}
-    .tarrow{flex-direction:row;padding-top:0}
-    .tarrow svg{transform:rotate(90deg)}
+  @media(max-width:760px){
+    .tin.two,.tin.three{grid-template-columns:1fr 1fr}
   }
 
 
@@ -612,21 +610,57 @@
     -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
             mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
   }
-  .mqrow{display:flex;width:max-content;animation:mqslide 38s linear infinite}
+  .mqrow{display:flex;width:max-content;animation:mqslide 22s linear infinite}
   .mq:hover .mqrow{animation-play-state:paused}
   .mqset{display:flex;align-items:center;gap:52px;padding-right:52px}
   .mqset span{display:flex;flex-direction:column;align-items:center;gap:9px;flex:0 0 auto}
   .mqset img{
-    height:30px;width:auto;object-fit:contain;
-    filter:grayscale(1) opacity(.5);transition:filter .45s var(--ease);
+    height:34px;width:auto;object-fit:contain;
+    filter:none;opacity:.95;transition:transform .4s var(--ease);
   }
-  .mqset span:hover img{filter:none}
+  .mqset span:hover img{transform:scale(1.12)}
   .mqset i{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-style:normal}
   @keyframes mqslide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
   @media(prefers-reduced-motion:reduce){
     .mqrow{animation:none;flex-wrap:wrap}
     .mq{-webkit-mask-image:none;mask-image:none}
   }
+
+
+  .system.dark .mono{color:rgba(236,240,241,.74)}
+  .system.dark .lede{color:rgba(236,240,241,.8)}
+  .system.dark .tri p{color:rgba(236,240,241,.82)}
+  .system.dark .bnums span{color:rgba(236,240,241,.76)}
+  .system.dark .stage p{color:rgba(236,240,241,.8)}
+  .system.dark .achip{color:rgba(236,240,241,.8)}
+  .system.dark .alab{color:rgba(236,240,241,.7)}
+  .system.dark .runner{color:rgba(236,240,241,.7)}
+  .system.dark .mono{font-size:10.5px;letter-spacing:.16em}
+  .system.dark .imp{background:rgba(230,126,34,.26);color:#fff;box-shadow:none}
+
+
+  mark.imp{
+    background:rgba(230,126,34,.22);color:var(--ink);
+    padding:.06em .22em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+    font-weight:600;
+  }
+  mark.imp.warn2{background:rgba(211,84,0,.2)}
+  .proofshot{margin:22px 0 26px}
+  .proofshot img{
+    width:100%;border-radius:12px;box-shadow:0 0 0 1px var(--hair),var(--amb);display:block;
+  }
+  .proofshot figcaption{
+    margin-top:11px;font-family:var(--mono);font-size:11px;color:var(--ink-3);line-height:1.6;letter-spacing:.02em;
+  }
+  .proofshot figcaption b{color:var(--ink-2)}
+  .hcard.accentcard{background:rgba(230,126,34,.1);box-shadow:0 1px 0 rgba(255,255,255,.85) inset,0 0 0 1px rgba(230,126,34,.3)}
+  .island .me{width:34px;height:34px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px var(--hair);flex:0 0 auto}
+  @media(max-width:560px){.island .me{display:none}}
+
+
+  .dest{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;border-top:1px solid rgba(236,240,241,.14)}
+  .dest img{height:17px;width:auto;opacity:.92}
+  .dest i{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(236,240,241,.66);font-style:normal;margin-left:2px}
 
   /* reveal */
   .js-anim .rv{opacity:0;transform:translateY(52px);filter:blur(9px);
@@ -674,6 +708,7 @@
 <nav>
   <div class="wrap">
     <div class="island">
+      <img class="me" src="img/ayush.jpg" alt="Ayush Sharma" width="34" height="34">
       <b>Ayush Sharma</b>
       <span class="avail"><span class="dot"></span> Available, remote</span>
       <a class="mail" href="https://t.me/ayushsharmatelegram">Message me
@@ -688,7 +723,7 @@
   <header>
     <h1 class="rv">I make the ads. And the <span class="q">machine</span> that makes the ads.</h1>
     <p class="role rv">AI Creative Strategist, Producer &amp; Performance Creative</p>
-    <p class="sub rv">Direct response for Meta, from angle to finished asset. Medical aesthetics, US home services, fintech. No handoff, no brief thrown over a wall.</p>
+    <p class="sub rv">Direct response for Meta, from angle to finished asset. <mark class="imp">I cut the shoot out of the budget and the wait out of the calendar.</mark> Medical aesthetics, US home services, fintech.</p>
 
     <div class="proof rv">
       <div><div class="n" data-num="12.8%">12.8%</div><div class="k">CTR &mdash; BlueMagic top ad</div></div>
@@ -776,8 +811,12 @@
             <tr class="ctrl"><td>filmed, theirs</td><td>6</td><td>40%</td><td>30%</td><td>index 100</td></tr>
           </tbody>
         </table></div>
-        <p class="dnote">The AI ads took <b>seventy percent of the leads on sixty percent of the spend</b>. The best single ad landed at under half the cost of the filmed control.</p>
-        <p class="dnote seal">Account screenshots available on request in an interview, redacted for spend.</p>
+        <p class="dnote"><mark class="imp">The AI ads took seventy percent of the leads on sixty percent of the spend.</mark> The best single ad landed at under half the cost of the filmed control.</p>
+        <figure class="proofshot">
+          <img src="img/proof/apex_ads.jpg" alt="Meta Ads Manager showing the ad names, delivery, lead counts and reach" loading="lazy">
+          <figcaption>Ads Manager, lead campaign. The rows ending <b>~ AI</b> are mine. Spend columns cropped out.</figcaption>
+        </figure>
+        <p class="dnote seal">Full account access available in an interview.</p>
       </div>
     </details>
   </section>
@@ -789,7 +828,7 @@
       <div class="mono rv">02 &middot; Meta &middot; UK and EU</div>
       <h2 class="rv brand"><img src="img/logo/bluemagic.svg" alt="BlueMagic Group" style="max-height:52px"></h2>
       <p class="rv">An Istanbul hair-transplant clinic selling a home protocol into one of the most expensive lead-gen categories on Meta.</p>
-      <p class="rv">Broad beat every custom audience by eight times. The winning creative beat its sibling by four.</p>
+      <p class="rv"><mark class="imp">Broad beat every custom audience by eight times.</mark> The winning creative beat its sibling by four.</p>
       <div class="metric rv"><span class="v" data-num="12.8%">12.8%</span><span class="l">CTR, winning ad</span></div>
     </div>
 
@@ -861,9 +900,17 @@
             <tr class="ctrl"><td>AS3</td><td>Purchased list</td><td>2%</td><td class="warn">10.12</td><td>1.49%</td></tr>
           </tbody>
         </table></div>
-        <p class="dnote"><b>Broad beat every custom audience by about eight times.</b></p>
-        <p class="dnote"><b>AS3 was serving ten times over to a list of seventy three.</b> I flagged it. A list that small cannot absorb budget.</p>
-        <p class="dnote">Creative mattered as much: same ad sets, V1 ran <b>12.81%</b> and <b>11.87%</b>, V4 managed <b>2.91%</b> and <b>2.14%</b>.</p>
+        <p class="dnote"><mark class="imp">Broad beat every custom audience by about eight times.</mark></p>
+        <p class="dnote"><mark class="imp warn2">AS3 was serving ten times over to a list of seventy three.</mark> I flagged it. A list that small cannot absorb budget.</p>
+        <figure class="proofshot">
+          <img src="img/proof/bm_adsets.jpg" alt="Meta Ads Manager showing click-through rate by ad set, spend blurred" loading="lazy">
+          <figcaption>Ad set level. Broad at <b>12.67%</b> against the lookalikes near <b>1.4%</b>. Spend blurred.</figcaption>
+        </figure>
+        <figure class="proofshot">
+          <img src="img/proof/bm_ads.jpg" alt="Meta Ads Manager showing click-through rate per ad, spend blurred" loading="lazy">
+          <figcaption>Ad level. The winning creative at <b>12.81%</b>. Spend blurred.</figcaption>
+        </figure>
+        <p class="dnote">Creative mattered as much: <mark class="imp">same ad sets, V1 ran 12.81% and 11.87% where V4 managed 2.91%.</mark></p>
       </div>
     </details>
   </section>
@@ -970,8 +1017,8 @@
 
 
   <section class="system dark" style="padding-block:0;border-top:0">
-    <div class="mono rv">Echo &middot; the manufacturing problem</div>
-    <h3 class="big rv">So I stopped making videos, and built the line that makes them.</h3>
+    <div class="mono rv">03 &middot; Echo &middot; automation</div>
+    <h3 class="big rv">I automate content production.</h3>
 
 
     <div class="tri">
@@ -981,7 +1028,7 @@
       </div>
       <div class="rv">
         <h4 class="bl">What I did first</h4>
-        <p>A full content audit before a single frame. I scored <b>182 of the account's own reels</b> by reach and posting hour.</p>
+        <p>A full content audit before a single frame. <mark class="imp">I scored 182 of the account’s own reels</mark> by reach and posting hour.</p>
       </div>
       <div class="rv">
         <h4 class="bl">The solution</h4>
@@ -1023,6 +1070,7 @@
         <figcaption>
           <span class="sn"><em>02</em> Generate</span>
           <p>Face, voice and motion generated in batches of twelve. kling3_0 and ElevenLabs.</p>
+          <span class="dest"><img src="img/tool/elevenlabs.svg" alt="ElevenLabs"><i>kling 3.0 &middot; ElevenLabs</i></span>
         </figcaption>
       </figure>
       <figure class="stage rv">
@@ -1044,6 +1092,7 @@
         <figcaption>
           <span class="sn"><em>05</em> Approve</span>
           <p>One preview to Telegram. No reply inside the hour and the batch carries on without me.</p>
+          <span class="dest"><img src="img/tool/telegram_light.svg" alt="Telegram"><i>sent to Telegram</i></span>
         </figcaption>
       </figure>
       <figure class="stage rv">
@@ -1051,16 +1100,11 @@
         <figcaption>
           <span class="sn"><em>06</em> Publish</span>
           <p>Queued through the Meta Graph API with scheduled publish times. The laptop can be off.</p>
+          <span class="dest"><img src="img/tool/facebook_light.svg" alt="Facebook"><img src="img/tool/instagram_light.svg" alt="Instagram"><i>scheduled</i></span>
         </figcaption>
       </figure>
     </div>
 
-    <div class="specs">
-      <div class="rv"><div class="n">51,000</div><div class="t">words of transcript mined into a <b>measured voice profile</b>, so generated copy lands in the presenter's real cadence.</div></div>
-      <div class="rv"><div class="n">0.50</div><div class="t">lip-sync correlation under nine seconds, against <b>0.31 over twelve</b>. That measurement is why the chunk cap exists.</div></div>
-      <div class="rv"><div class="n">14</div><div class="t">delivered videos re-titled for <b>zero generation spend</b>, because the pipeline keeps raw components by design.</div></div>
-      <div class="rv"><div class="n">182</div><div class="t">reels bucketed by posting hour. Best window ran a <b>median 31,834 views</b> against 12,466 in the worst.</div></div>
-    </div>
   </section>
 
 
@@ -1117,6 +1161,11 @@
     <h3 class="big rv">What you are actually buying.</h3>
 
     <div class="hgrid">
+      <div class="hcard rv accentcard">
+        <svg class="ic"><use href="#ic-clock"/></svg>
+        <h4>Cost I take out</h4>
+        <p>A shoot day, a crew and a studio become two phone clips and a prompt. <mark class="imp">Ten minutes of footage became four ads that beat the filmed ones.</mark></p>
+      </div>
       <div class="hcard rv">
         <svg class="ic"><use href="#ic-target"/></svg>
         <h4>Roles I fit</h4>
@@ -1185,7 +1234,7 @@
     els.forEach(function(e, i){ e.style.transitionDelay = ((i % 4) * 85) + 'ms'; io.observe(e); });
   }
 
-  var vids = document.querySelectorAll('.vidwrap video');
+  var vids = document.querySelectorAll('video');
   var vo = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       var v = en.target;
